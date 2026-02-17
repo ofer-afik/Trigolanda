@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bp0msfmifgxhv"]
+
+[ext_resource type="Script" uid="uid://dpfwqmtjh768c" path="res://assets/scripts/game_manager.gd" id="1_cffl0"]
+[ext_resource type="Texture2D" uid="uid://ch8gofdomkwpc" path="res://assets/sprites/map/Background/stripes.png" id="2_pyh3q"]
+
+[sub_resource type="Animation" id="Animation_pyh3q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hwl8t"]
+resource_name = "background"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(135, 135)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_og7js"]
+_data = {
+&"RESET": SubResource("Animation_pyh3q"),
+&"background": SubResource("Animation_hwl8t")
+}
+
+[node name="GameManager" type="Node" unique_id=1154234100]
+script = ExtResource("1_cffl0")
+
+[node name="2DWorld" type="Node2D" parent="." unique_id=786797176]
+
+[node name="Background" type="Sprite2D" parent="2DWorld" unique_id=1191978199]
+z_index = -10
+texture_repeat = 2
+texture = ExtResource("2_pyh3q")
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="2DWorld/Background" unique_id=1003660302]
+libraries/ = SubResource("AnimationLibrary_og7js")
+autoplay = &"background"
+
+[node name="Camera2D" type="Camera2D" parent="2DWorld" unique_id=1531749674]
+
+[node name="Control" type="Control" parent="." unique_id=397001563]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
