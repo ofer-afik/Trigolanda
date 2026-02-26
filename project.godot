@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 Global="*uid://biyq01l1a8xjl"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
@@ -45,9 +51,15 @@ jump={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Walls-Simple-Platforms"
+2d_physics/layer_2="Player"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
+2d/default_gravity=1000.0
 
 [rendering]
 
