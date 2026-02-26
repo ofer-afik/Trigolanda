@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bp0msfmifgxhv"]
 
 [ext_resource type="Script" uid="uid://dpfwqmtjh768c" path="res://assets/scripts/game_manager.gd" id="1_cffl0"]
-[ext_resource type="Texture2D" uid="uid://ch8gofdomkwpc" path="res://assets/sprites/map/Background/stripes.png" id="2_pyh3q"]
+[ext_resource type="Texture2D" uid="uid://chjso4qkmt3t7" path="res://assets/sprites/map/Background/curves.png" id="2_hwl8t"]
+[ext_resource type="PackedScene" uid="uid://bgc8wxui8niwq" path="res://assets/scenes/main_menu.tscn" id="3_hwl8t"]
+[ext_resource type="Script" uid="uid://brj8pty3w8cfw" path="res://assets/scripts/audio.gd" id="4_og7js"]
 
 [sub_resource type="Animation" id="Animation_pyh3q"]
 length = 0.001
@@ -20,7 +22,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_hwl8t"]
 resource_name = "background"
-length = 1.5
+length = 2.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -29,10 +31,10 @@ tracks/0/path = NodePath(".:offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(135, 135)]
+"values": [Vector2(0, 0), Vector2(190, 190)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_og7js"]
@@ -49,18 +51,23 @@ script = ExtResource("1_cffl0")
 [node name="Background" type="Sprite2D" parent="2DWorld" unique_id=1191978199]
 z_index = -10
 texture_repeat = 2
-texture = ExtResource("2_pyh3q")
+texture = ExtResource("2_hwl8t")
 region_enabled = true
-region_rect = Rect2(0, 0, 1920, 1080)
+region_rect = Rect2(0, 0, 3000, 2000)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="2DWorld/Background" unique_id=1003660302]
 libraries/ = SubResource("AnimationLibrary_og7js")
 autoplay = &"background"
 
-[node name="Camera2D" type="Camera2D" parent="2DWorld" unique_id=1531749674]
+[node name="MainMenu" parent="2DWorld" unique_id=1331045668 instance=ExtResource("3_hwl8t")]
 
 [node name="Control" type="Control" parent="." unique_id=397001563]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Audio" type="Node" parent="." unique_id=426799178]
+script = ExtResource("4_og7js")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio" unique_id=1673619046]
