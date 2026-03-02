@@ -6,4 +6,4 @@ class_name GameManager extends Node
 var current
 
 func _ready() -> void:
-		Global.game_manager = self
+	Global.game_manager = self

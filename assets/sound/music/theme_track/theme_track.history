@@ -310,4 +310,297 @@
       </SelectionMemento>
     </MementoCommand>
   </UndoTransaction>
+  <UndoTransaction tv-sec="1772127607" tv-usec="831755" name="move marker">
+    <MementoCommand obj-id="31628" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="890" name="session" start="b0" end="b193920" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+      <Locations>
+        <Location id="890" name="session" start="b0" end="b38971" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772127611" tv-usec="58524" name="move marker">
+    <MementoCommand obj-id="31628" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="890" name="session" start="b0" end="b38971" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+      <Locations>
+        <Location id="890" name="session" start="b0" end="b65280" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772128024" tv-usec="813386" name="move marker">
+    <MementoCommand obj-id="31628" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="890" name="session" start="b0" end="b65280" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b71040" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="1"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="1"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772128027" tv-usec="38569" name="move marker">
+    <MementoCommand obj-id="31628" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b71040" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b92160" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772128035" tv-usec="835919" name="move marker">
+    <MementoCommand obj-id="31628" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b92160" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b203520" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772128041" tv-usec="797800" name="move marker">
+    <MementoCommand obj-id="31628" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b203520" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b128640" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772128046" tv-usec="740174" name="move marker">
+    <MementoCommand obj-id="31628" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b128640" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b128640" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="1"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="1"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772137566" tv-usec="512302" name="move marker">
+    <MementoCommand obj-id="31628" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b128640" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b126644" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772137711" tv-usec="156089" name="move notes">
+    <NoteDiffCommand midi-source="13258">
+      <ChangedNotes/>
+      <AddedNotes/>
+      <RemovedNotes/>
+    </NoteDiffCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13263"/>
+          </Regions>
+          <MIDINotes region-id="13263">
+            <note note-id="100665"/>
+          </MIDINotes>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13263"/>
+          </Regions>
+          <MIDINotes region-id="13263">
+            <note note-id="100665"/>
+          </MIDINotes>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772139073" tv-usec="627139" name="move marker">
+    <MementoCommand obj-id="31628" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b126644" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b128640" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseObject" zoom="2268" left-frame="0" y-origin="0">
+        <Selection>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseObject" zoom="2268" left-frame="0" y-origin="0">
+        <Selection>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
 </UndoHistory>

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bgc8wxui8niwq"]
 
-[ext_resource type="TileSet" uid="uid://fjwxp4evlkh0" path="res://assets/sprites/map/Tilemap/tile_set.tres" id="1_uu6ob"]
+[ext_resource type="TileSet" uid="uid://fjwxp4evlkh0" path="res://assets/sprites/map/tilemap/tile_set.tres" id="1_uu6ob"]
 [ext_resource type="PackedScene" uid="uid://bk7f7www5lwr2" path="res://assets/scenes/player.tscn" id="2_v1ppo"]
 
 [node name="MainMenu" type="Node2D" unique_id=1331045668]
@@ -12,6 +12,4 @@ tile_map_data = PackedByteArray("AAD2//v/AAAAAAAAAAD2//z/AAABAAAAAAD2//3/AAABAAA
 tile_set = ExtResource("1_uu6ob")
 
 [node name="Player" parent="." unique_id=1227811721 instance=ExtResource("2_v1ppo")]
-position = Vector2(0, 270)
-speed = 500.0
-jump_velocity = -600.0
+position = Vector2(-396, 90)

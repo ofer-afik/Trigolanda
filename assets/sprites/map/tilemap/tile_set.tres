@@ -1,0 +1,21 @@
+[gd_resource type="TileSet" format=3 uid="uid://fjwxp4evlkh0"]
+
+[ext_resource type="Texture2D" uid="uid://b31qf3rhdsx1p" path="res://assets/sprites/map/tilemap/tilemap.png" id="1_f2chp"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1ppo"]
+texture = ExtResource("1_f2chp")
+texture_region_size = Vector2i(90, 90)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-33.86844, -45, 33.303955, -45, 45, -34.432907, 45, 35.56185, 34.71514, 45, -35.844086, 45, -45, 35.56185, -45, -33.02172)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-33.86844, -45, 33.303955, -45, 45, -34.432907, 45, 35.56185, 34.71514, 45, -35.844086, 45, -45, 35.56185, -45, -33.02172)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-33.86844, -45, 33.303955, -45, 45, -34.432907, 45, 35.56185, 34.71514, 45, -35.844086, 45, -45, 35.56185, -45, -33.02172)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-33.86844, -45, 33.303955, -45, 45, -34.432907, 45, 35.56185, 34.71514, 45, -35.844086, 45, -45, 35.56185, -45, -33.02172)
+
+[resource]
+tile_size = Vector2i(90, 90)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 3
+sources/0 = SubResource("TileSetAtlasSource_v1ppo")

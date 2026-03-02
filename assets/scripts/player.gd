@@ -1,14 +1,20 @@
 extends CharacterBody2D
 
+@export var SPEED = 500.0
+@export var JUMP_VELOCITY = 900.0
+@export var AIR_ACCEL = 0.05
+@export var GROUND_ACCEL = 0.2
+
 @onready var animplay: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
 
-@export var speed = 300.0
-@export var jump_velocity = -400.0
-@export var friction = 5.0
-
 var look_left = load("res://assets/sprites/main_char/char_up_lt.png")
 var look_right = load("res://assets/sprites/main_char/char_up_rt.png")
+
+var last_grounded = 0.0
+var last_jump_pressed = 0.0
+var target_velocity_x = 0.0
+
 
 # Animation states.
 enum State {
@@ -23,64 +29,56 @@ enum State {
 }
 
 var anim_state : State = State.IDLE
+var past_anim_state : State = State.IDLE
 
-# Called from jump_start animation.
-func jump():
-	velocity.y = jump_velocity
+func _physics_process(_delta: float) -> void:
+	# ---------- Handle input ----------
+	# Jump input
+	if Input.is_action_just_pressed("jump"):
+		last_jump_pressed = Time.get_ticks_msec()
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-		anim_state = State.IN_AIR
+	var elapsed_since_jump_pressed = (Time.get_ticks_msec()) - last_jump_pressed
 
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and (anim_state == State.IDLE or anim_state == State.RUNNING) and is_on_floor():
-		anim_state = State.JUMP_START
+	# Horizontal movement input
+	var dir = Input.get_axis("move_left", "move_right")
 
-	# Handle horizontal movement.
-	var direction := Input.get_axis("move_left", "move_right")
-	if direction:
-		if anim_state != State.JUMP_START:
-			velocity.x = direction * speed
-		else:
-			velocity.x = 0
-		if anim_state == State.IDLE:
-			anim_state = State.RUNNING
-		if direction < 0:
-			sprite.texture = look_left
-		else:
-			sprite.texture = look_right
+	# --------- Horizontal Movement ---------
+	# Horizontal movement logic
+	var accel = GROUND_ACCEL if is_on_floor() else AIR_ACCEL
+	target_velocity_x = dir * SPEED
+	var velocity_delta = target_velocity_x - velocity.x
+
+	# Calculate acceleration towards target velocity
+	var velocity_x = velocity.x
+
+	if abs(velocity_delta) > abs(accel):
+		velocity_x += velocity_delta * accel
+		velocity_x = clamp(velocity_x, -SPEED, SPEED)
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed * delta * friction)
-		if anim_state == State.RUNNING:
-			anim_state = State.IDLE
-	
-	# Handle landing.
-	if is_on_floor() and anim_state == State.IN_AIR:
-		anim_state = State.LANDING
-	
-	# Handle animations.
-	match anim_state:
-		State.IDLE:
-			if not animplay.current_animation == "idle":
-				animplay.play("idle")
-		State.RUNNING:
-			if not animplay.current_animation == "run":
-				animplay.play("run")
-		State.JUMP_START:
-			if not animplay.current_animation == "jump_start":
-				animplay.play("jump_start")
-		State.IN_AIR:
-			pass
-		State.LANDING:
-			if not animplay.current_animation == "land":
-				animplay.play("land")
-	
-	move_and_slide()
+		velocity_x = target_velocity_x
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "jump_start" and anim_state == State.JUMP_START:
-		anim_state = State.IN_AIR
-	elif anim_name == "land" and anim_state == State.LANDING:
-		anim_state = State.IDLE
+	# Apply acceleration
+	velocity.x = velocity_x
+
+	# --------- Vertical Movement ---------
+	# Jumping logic
+	if is_on_floor():
+		last_grounded = Time.get_ticks_msec()
+
+	var elapsed_since_grounded = (Time.get_ticks_msec()) - last_grounded
+	var jump_velocity = -sign(get_gravity().y) * JUMP_VELOCITY
+
+	if elapsed_since_grounded < 200 and elapsed_since_jump_pressed < 200:
+		velocity.y = jump_velocity
+		last_jump_pressed = 2000
+
+	if  Input.is_action_just_released("jump") and velocity.y < 0:
+			velocity.y += get_gravity().y / 3
+
+	# Gravity
+	velocity.y += get_gravity().y / 30
+
+	velocity.y = clamp(velocity.y, -JUMP_VELOCITY, JUMP_VELOCITY)
+
+	# ---------- Apply movement ----------
+	move_and_slide()
