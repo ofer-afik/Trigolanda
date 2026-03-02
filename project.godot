@@ -15,6 +15,10 @@ run/main_scene="uid://bp0msfmifgxhv"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://cx64oagriadld"
+
 [autoload]
 
 Global="*uid://biyq01l1a8xjl"
@@ -59,7 +63,6 @@ jump={
 [physics]
 
 3d/physics_engine="Jolt Physics"
-2d/default_gravity=1000.0
 
 [rendering]
 

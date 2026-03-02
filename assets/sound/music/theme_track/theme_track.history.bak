@@ -1,2 +1,606 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<UndoHistory/>
+<UndoHistory>
+  <UndoTransaction tv-sec="1772121149" tv-usec="461604" name="delete selection">
+    <NoteDiffCommand midi-source="13736">
+      <ChangedNotes/>
+      <AddedNotes/>
+      <RemovedNotes>
+        <note id="214328" note="63" channel="0" time="91:0" length="0:960" velocity="45"/>
+      </RemovedNotes>
+    </NoteDiffCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="1286805" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13738"/>
+          </Regions>
+          <MIDINotes region-id="13738">
+            <note note-id="214328"/>
+          </MIDINotes>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="1286805" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13738"/>
+          </Regions>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772121151" tv-usec="747249" name="move notes">
+    <NoteDiffCommand midi-source="13722">
+      <ChangedNotes/>
+      <AddedNotes/>
+      <RemovedNotes/>
+    </NoteDiffCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="1286805" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13724"/>
+          </Regions>
+          <MIDINotes region-id="13724">
+            <note note-id="213024"/>
+          </MIDINotes>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="1286805" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13724"/>
+          </Regions>
+          <MIDINotes region-id="13724">
+            <note note-id="213024"/>
+          </MIDINotes>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772121154" tv-usec="420196" name="delete selection">
+    <NoteDiffCommand midi-source="13722">
+      <ChangedNotes/>
+      <AddedNotes/>
+      <RemovedNotes>
+        <note id="213024" note="47" channel="0" time="70:0" length="3:960" velocity="63"/>
+        <note id="213027" note="47" channel="0" time="74:0" length="3:960" velocity="64"/>
+        <note id="213030" note="46" channel="0" time="78:0" length="3:960" velocity="64"/>
+        <note id="213033" note="47" channel="0" time="82:0" length="3:1440" velocity="64"/>
+        <note id="213036" note="47" channel="0" time="86:0" length="3:960" velocity="63"/>
+        <note id="213039" note="47" channel="0" time="90:0" length="3:960" velocity="63"/>
+        <note id="213042" note="49" channel="0" time="94:0" length="1:960" velocity="63"/>
+        <note id="213045" note="49" channel="0" time="96:0" length="0:960" velocity="63"/>
+        <note id="213048" note="47" channel="0" time="97:0" length="1:0" velocity="63"/>
+      </RemovedNotes>
+    </NoteDiffCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="1286805" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13724"/>
+          </Regions>
+          <MIDINotes region-id="13724">
+            <note note-id="213024"/>
+            <note note-id="213027"/>
+            <note note-id="213030"/>
+            <note note-id="213033"/>
+            <note note-id="213036"/>
+            <note note-id="213039"/>
+            <note note-id="213042"/>
+            <note note-id="213045"/>
+            <note note-id="213048"/>
+          </MIDINotes>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="1286805" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13724"/>
+          </Regions>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772121172" tv-usec="320505" name="delete selection">
+    <NoteDiffCommand midi-source="13736">
+      <ChangedNotes/>
+      <AddedNotes/>
+      <RemovedNotes>
+        <note id="214292" note="68" channel="0" time="84:0" length="0:320" velocity="54"/>
+        <note id="214289" note="70" channel="0" time="83:960" length="0:960" velocity="54"/>
+        <note id="214286" note="68" channel="0" time="83:0" length="0:960" velocity="54"/>
+        <note id="214283" note="70" channel="0" time="82:960" length="0:960" velocity="54"/>
+        <note id="214280" note="71" channel="0" time="82:0" length="0:960" velocity="54"/>
+        <note id="214277" note="66" channel="0" time="81:960" length="0:480" velocity="54"/>
+        <note id="214274" note="66" channel="0" time="80:960" length="0:1440" velocity="54"/>
+        <note id="214271" note="61" channel="0" time="80:0" length="0:480" velocity="54"/>
+        <note id="214268" note="63" channel="0" time="79:0" length="0:960" velocity="54"/>
+        <note id="214265" note="59" channel="0" time="78:0" length="0:960" velocity="54"/>
+        <note id="214262" note="54" channel="0" time="77:960" length="0:960" velocity="54"/>
+        <note id="214259" note="56" channel="0" time="77:0" length="0:960" velocity="54"/>
+        <note id="214256" note="54" channel="0" time="76:960" length="0:960" velocity="54"/>
+        <note id="214253" note="61" channel="0" time="76:0" length="0:480" velocity="54"/>
+        <note id="214250" note="63" channel="0" time="75:0" length="0:960" velocity="54"/>
+        <note id="214247" note="59" channel="0" time="74:0" length="0:960" velocity="54"/>
+        <note id="214244" note="66" channel="0" time="73:960" length="0:480" velocity="54"/>
+        <note id="214241" note="66" channel="0" time="72:960" length="0:1440" velocity="54"/>
+        <note id="214238" note="61" channel="0" time="72:0" length="0:480" velocity="54"/>
+        <note id="214235" note="63" channel="0" time="71:0" length="0:960" velocity="54"/>
+        <note id="214232" note="59" channel="0" time="70:0" length="0:960" velocity="54"/>
+        <note id="214295" note="70" channel="0" time="84:320" length="0:320" velocity="54"/>
+        <note id="214298" note="68" channel="0" time="84:640" length="0:320" velocity="53"/>
+        <note id="214301" note="66" channel="0" time="84:960" length="0:960" velocity="54"/>
+        <note id="214304" note="63" channel="0" time="85:0" length="0:960" velocity="54"/>
+        <note id="214307" note="66" channel="0" time="85:960" length="0:960" velocity="54"/>
+        <note id="214310" note="59" channel="0" time="86:0" length="0:960" velocity="45"/>
+        <note id="214313" note="63" channel="0" time="87:0" length="0:960" velocity="45"/>
+        <note id="214316" note="61" channel="0" time="88:0" length="0:480" velocity="45"/>
+        <note id="214319" note="66" channel="0" time="88:960" length="0:1440" velocity="45"/>
+        <note id="214322" note="66" channel="0" time="89:960" length="0:480" velocity="45"/>
+        <note id="214325" note="59" channel="0" time="90:0" length="0:960" velocity="45"/>
+      </RemovedNotes>
+    </NoteDiffCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="2144675" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13738"/>
+          </Regions>
+          <MIDINotes region-id="13738">
+            <note note-id="214232"/>
+            <note note-id="214235"/>
+            <note note-id="214238"/>
+            <note note-id="214241"/>
+            <note note-id="214244"/>
+            <note note-id="214247"/>
+            <note note-id="214250"/>
+            <note note-id="214253"/>
+            <note note-id="214256"/>
+            <note note-id="214259"/>
+            <note note-id="214262"/>
+            <note note-id="214265"/>
+            <note note-id="214268"/>
+            <note note-id="214271"/>
+            <note note-id="214274"/>
+            <note note-id="214277"/>
+            <note note-id="214280"/>
+            <note note-id="214283"/>
+            <note note-id="214286"/>
+            <note note-id="214289"/>
+            <note note-id="214292"/>
+            <note note-id="214295"/>
+            <note note-id="214298"/>
+            <note note-id="214301"/>
+            <note note-id="214304"/>
+            <note note-id="214307"/>
+            <note note-id="214310"/>
+            <note note-id="214313"/>
+            <note note-id="214316"/>
+            <note note-id="214319"/>
+            <note note-id="214322"/>
+            <note note-id="214325"/>
+          </MIDINotes>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="2144675" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13738"/>
+          </Regions>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772121190" tv-usec="797516" name="move notes">
+    <NoteDiffCommand midi-source="13729">
+      <ChangedNotes/>
+      <AddedNotes/>
+      <RemovedNotes/>
+    </NoteDiffCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="2144675" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <MIDINotes region-id="13731">
+            <note note-id="221890"/>
+          </MIDINotes>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="2144675" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <MIDINotes region-id="13731">
+            <note note-id="221890"/>
+          </MIDINotes>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772121192" tv-usec="457292" name="delete selection">
+    <NoteDiffCommand midi-source="13729">
+      <ChangedNotes/>
+      <AddedNotes/>
+      <RemovedNotes>
+        <note id="221890" note="55" channel="0" time="68:0" length="0:960" velocity="70"/>
+        <note id="221893" note="59" channel="0" time="69:0" length="0:960" velocity="70"/>
+        <note id="221896" note="60" channel="0" time="70:0" length="1:0" velocity="70"/>
+        <note id="221899" note="62" channel="0" time="71:0" length="0:960" velocity="70"/>
+        <note id="221902" note="55" channel="0" time="71:960" length="0:960" velocity="70"/>
+        <note id="221905" note="59" channel="0" time="72:960" length="0:960" velocity="70"/>
+        <note id="221908" note="60" channel="0" time="73:0" length="1:0" velocity="70"/>
+        <note id="221911" note="67" channel="0" time="74:0" length="0:490" velocity="70"/>
+        <note id="221914" note="71" channel="0" time="74:960" length="1:0" velocity="70"/>
+        <note id="221917" note="72" channel="0" time="75:960" length="0:960" velocity="70"/>
+        <note id="221920" note="55" channel="0" time="76:0" length="0:960" velocity="60"/>
+        <note id="221923" note="59" channel="0" time="77:0" length="0:960" velocity="60"/>
+        <note id="221926" note="60" channel="0" time="78:0" length="1:0" velocity="60"/>
+        <note id="221929" note="62" channel="0" time="79:0" length="0:960" velocity="60"/>
+        <note id="221932" note="55" channel="0" time="79:960" length="0:960" velocity="60"/>
+        <note id="221935" note="62" channel="0" time="80:960" length="2:0" velocity="60"/>
+        <note id="221938" note="62" channel="0" time="83:960" length="0:960" velocity="60"/>
+        <note id="221941" note="55" channel="0" time="84:0" length="0:960" velocity="70"/>
+        <note id="221944" note="59" channel="0" time="85:0" length="0:960" velocity="70"/>
+        <note id="221947" note="60" channel="0" time="86:0" length="1:0" velocity="70"/>
+        <note id="221950" note="62" channel="0" time="87:0" length="0:960" velocity="70"/>
+        <note id="221953" note="55" channel="0" time="87:960" length="0:960" velocity="70"/>
+        <note id="221956" note="59" channel="0" time="88:960" length="0:960" velocity="70"/>
+        <note id="221959" note="60" channel="0" time="89:0" length="1:0" velocity="70"/>
+        <note id="221962" note="67" channel="0" time="90:0" length="0:490" velocity="70"/>
+        <note id="221965" note="71" channel="0" time="90:960" length="1:0" velocity="70"/>
+        <note id="221968" note="72" channel="0" time="91:960" length="0:960" velocity="70"/>
+        <note id="221971" note="55" channel="0" time="92:0" length="0:960" velocity="71"/>
+        <note id="221974" note="59" channel="0" time="93:0" length="0:960" velocity="71"/>
+        <note id="221977" note="60" channel="0" time="94:0" length="1:0" velocity="71"/>
+        <note id="221980" note="62" channel="0" time="95:0" length="0:960" velocity="71"/>
+        <note id="221983" note="55" channel="0" time="95:960" length="0:960" velocity="71"/>
+      </RemovedNotes>
+    </NoteDiffCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="2144675" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <MIDINotes region-id="13731">
+            <note note-id="221890"/>
+            <note note-id="221893"/>
+            <note note-id="221896"/>
+            <note note-id="221899"/>
+            <note note-id="221902"/>
+            <note note-id="221905"/>
+            <note note-id="221908"/>
+            <note note-id="221911"/>
+            <note note-id="221914"/>
+            <note note-id="221917"/>
+            <note note-id="221920"/>
+            <note note-id="221923"/>
+            <note note-id="221926"/>
+            <note note-id="221929"/>
+            <note note-id="221932"/>
+            <note note-id="221935"/>
+            <note note-id="221938"/>
+            <note note-id="221941"/>
+            <note note-id="221944"/>
+            <note note-id="221947"/>
+            <note note-id="221950"/>
+            <note note-id="221953"/>
+            <note note-id="221956"/>
+            <note note-id="221959"/>
+            <note note-id="221962"/>
+            <note note-id="221965"/>
+            <note note-id="221968"/>
+            <note note-id="221971"/>
+            <note note-id="221974"/>
+            <note note-id="221977"/>
+            <note note-id="221980"/>
+            <note note-id="221983"/>
+          </MIDINotes>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="2144675" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772127607" tv-usec="831755" name="move marker">
+    <MementoCommand obj-id="31628" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="890" name="session" start="b0" end="b193920" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+      <Locations>
+        <Location id="890" name="session" start="b0" end="b38971" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772127611" tv-usec="58524" name="move marker">
+    <MementoCommand obj-id="31628" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="890" name="session" start="b0" end="b38971" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+      <Locations>
+        <Location id="890" name="session" start="b0" end="b65280" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772128024" tv-usec="813386" name="move marker">
+    <MementoCommand obj-id="31628" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="890" name="session" start="b0" end="b65280" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b71040" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="1"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="1"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772128027" tv-usec="38569" name="move marker">
+    <MementoCommand obj-id="31628" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b71040" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b92160" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772128035" tv-usec="835919" name="move marker">
+    <MementoCommand obj-id="31628" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b92160" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b203520" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772128041" tv-usec="797800" name="move marker">
+    <MementoCommand obj-id="31628" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b203520" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b128640" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772128046" tv-usec="740174" name="move marker">
+    <MementoCommand obj-id="31628" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b128640" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b128640" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="1"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="1"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772137566" tv-usec="512302" name="move marker">
+    <MementoCommand obj-id="31628" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b128640" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b126644" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13731"/>
+          </Regions>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772137711" tv-usec="156089" name="move notes">
+    <NoteDiffCommand midi-source="13258">
+      <ChangedNotes/>
+      <AddedNotes/>
+      <RemovedNotes/>
+    </NoteDiffCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13263"/>
+          </Regions>
+          <MIDINotes region-id="13263">
+            <note note-id="100665"/>
+          </MIDINotes>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseContent" zoom="2268" left-frame="0" y-origin="157">
+        <Selection>
+          <Regions>
+            <Region id="13263"/>
+          </Regions>
+          <MIDINotes region-id="13263">
+            <note note-id="100665"/>
+          </MIDINotes>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+  <UndoTransaction tv-sec="1772139073" tv-usec="627139" name="move marker">
+    <MementoCommand obj-id="31628" type-name="ARDOUR::Locations">
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b126644" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+      <Locations>
+        <Location id="890" name="session" start="b65280" end="b128640" flags="IsSessionRange" locked="0" timestamp="1771791844" cue="0"/>
+        <Location id="13532" name="Punch" start="b65280" end="b126720" flags="IsAutoPunch" locked="0" timestamp="1772093523" cue="0"/>
+      </Locations>
+    </MementoCommand>
+    <MementoCommand obj-id="50" type-name="SelectionMemento">
+      <SelectionMemento mouse-mode="MouseObject" zoom="2268" left-frame="0" y-origin="0">
+        <Selection>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+      <SelectionMemento mouse-mode="MouseObject" zoom="2268" left-frame="0" y-origin="0">
+        <Selection>
+          <Marker id="890" start="0"/>
+        </Selection>
+      </SelectionMemento>
+    </MementoCommand>
+  </UndoTransaction>
+</UndoHistory>
