@@ -7,3 +7,7 @@
 *.mono.sln
 *.mono.csproj
 *.mono.userprefs
+
+# Excalidraw files
+*.excalidraw
+*.excalidraw.json

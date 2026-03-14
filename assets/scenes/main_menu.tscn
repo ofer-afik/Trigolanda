@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://fjwxp4evlkh0" path="res://assets/sprites/map/tilemap/tile_set.tres" id="1_uu6ob"]
 [ext_resource type="PackedScene" uid="uid://bk7f7www5lwr2" path="res://assets/scenes/player.tscn" id="2_v1ppo"]
+[ext_resource type="PackedScene" uid="uid://bc5d7mh2ud36n" path="res://assets/scenes/grav_flip_but.tscn" id="3_obrqb"]
 
 [node name="MainMenu" type="Node2D" unique_id=1331045668]
 
@@ -12,4 +13,13 @@ tile_map_data = PackedByteArray("AAD2//v/AAAAAAAAAAD2//z/AAABAAAAAAD2//3/AAABAAA
 tile_set = ExtResource("1_uu6ob")
 
 [node name="Player" parent="." unique_id=1227811721 instance=ExtResource("2_v1ppo")]
-position = Vector2(-396, 90)
+position = Vector2(0, 241)
+
+[node name="GravFlipBut" parent="." unique_id=366145193 instance=ExtResource("3_obrqb")]
+position = Vector2(506, 315)
+
+[node name="GravFlipBut2" parent="." unique_id=1432184874 instance=ExtResource("3_obrqb")]
+position = Vector2(-143, -306)
+
+[node name="GravFlipBut3" parent="." unique_id=1742276203 instance=ExtResource("3_obrqb")]
+position = Vector2(0, 22)

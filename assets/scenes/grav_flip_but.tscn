@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bc5d7mh2ud36n"]
+
+[ext_resource type="Script" uid="uid://bgyaiei3pue4h" path="res://assets/scripts/grav_flip_but.gd" id="1_s2flt"]
+[ext_resource type="Texture2D" uid="uid://dpanhbhol5jsm" path="res://assets/sprites/objects/grav_flip_gem.svg" id="1_xwukv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s2flt"]
+radius = 11.0
+height = 34.0
+
+[sub_resource type="Gradient" id="Gradient_xwukv"]
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.17672414, 0.19396552, 0.7198276)
+colors = PackedColorArray(0.36282945, 0.36282945, 0.36282945, 1, 0.38928655, 0.38928664, 0.38928658, 1, 0.82616675, 0.82616675, 0.82616657, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_s2flt"]
+gradient = SubResource("Gradient_xwukv")
+fill = 1
+fill_from = Vector2(0.51282054, 0.491453)
+
+[sub_resource type="Animation" id="Animation_dt166"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -20)]
+}
+
+[sub_resource type="Animation" id="Animation_s2flt"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -5), Vector2(0, 5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dt166"]
+_data = {
+&"RESET": SubResource("Animation_dt166"),
+&"idle": SubResource("Animation_s2flt")
+}
+
+[node name="GravFlipBut" type="Node2D" unique_id=1742276203]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=366145193]
+position = Vector2(0, -20)
+script = ExtResource("1_s2flt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=47380643]
+shape = SubResource("CapsuleShape2D_s2flt")
+
+[node name="GravFlipGem" type="Sprite2D" parent="Area2D" unique_id=1112051645]
+texture = ExtResource("1_xwukv")
+
+[node name="PointLight2D" type="PointLight2D" parent="Area2D" unique_id=1233526137]
+color = Color(0.7041575, 0.007843138, 0.9711254, 1)
+energy = 500.0
+texture = SubResource("GradientTexture2D_s2flt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1911821532]
+root_node = NodePath("../Area2D")
+libraries/ = SubResource("AnimationLibrary_dt166")
+autoplay = &"idle"
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
