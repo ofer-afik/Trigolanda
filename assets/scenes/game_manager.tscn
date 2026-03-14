@@ -4,8 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://chjso4qkmt3t7" path="res://assets/sprites/background/curves.png" id="2_hwl8t"]
 [ext_resource type="PackedScene" uid="uid://bgc8wxui8niwq" path="res://assets/scenes/main_menu.tscn" id="3_hwl8t"]
 [ext_resource type="Script" uid="uid://brj8pty3w8cfw" path="res://assets/scripts/audio.gd" id="4_og7js"]
-[ext_resource type="AudioStream" uid="uid://cy5q11nynqa82" path="res://assets/sound/music/theme_track/export/theme_track_loop.wav" id="5_qw4xk"]
-[ext_resource type="AudioStream" uid="uid://ctbmwsc1wr5lv" path="res://assets/sound/sfx/run_sfx/export/run_sfx.wav" id="6_dik2r"]
+[ext_resource type="AudioStream" uid="uid://cp5oi26xjntsb" path="res://assets/sound/music/theme_track/export/theme_track_opening.wav" id="5_ubl00"]
+[ext_resource type="AudioStream" uid="uid://dideu7xgd3vcb" path="res://assets/sound/sfx/jump_sfx/export/jump_sfx.wav" id="6_dik2r"]
+[ext_resource type="Texture2D" uid="uid://dbetvqhyyl5tw" path="res://assets/sprites/characters/triangles/triangle_1.svg" id="7_ubl00"]
+[ext_resource type="Texture2D" uid="uid://cbr1dpo0y5hj3" path="res://assets/sprites/characters/triangles/triangle_2.svg" id="8_2qmdt"]
+[ext_resource type="Texture2D" uid="uid://vpmuau4yyxhq" path="res://assets/sprites/characters/triangles/triangle_3.svg" id="9_fa1x2"]
+
+[sub_resource type="Environment" id="Environment_dik2r"]
+background_mode = 3
+glow_enabled = true
 
 [sub_resource type="Animation" id="Animation_pyh3q"]
 length = 0.001
@@ -48,20 +55,23 @@ _data = {
 [node name="GameManager" type="Node" unique_id=1154234100]
 script = ExtResource("1_cffl0")
 
-[node name="2DWorld" type="Node2D" parent="." unique_id=786797176]
+[node name="World2D" type="Node2D" parent="." unique_id=786797176]
 
-[node name="Background" type="Sprite2D" parent="2DWorld" unique_id=1191978199]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World2D" unique_id=416416984]
+environment = SubResource("Environment_dik2r")
+
+[node name="Background" type="Sprite2D" parent="World2D" unique_id=1191978199]
 z_index = -10
 texture_repeat = 2
 texture = ExtResource("2_hwl8t")
 region_enabled = true
 region_rect = Rect2(0, 0, 3000, 2000)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="2DWorld/Background" unique_id=1003660302]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World2D/Background" unique_id=1003660302]
 libraries/ = SubResource("AnimationLibrary_og7js")
 autoplay = &"background"
 
-[node name="MainMenu" parent="2DWorld" unique_id=1331045668 instance=ExtResource("3_hwl8t")]
+[node name="MainMenu" parent="World2D" unique_id=1331045668 instance=ExtResource("3_hwl8t")]
 
 [node name="Control" type="Control" parent="." unique_id=397001563]
 layout_mode = 3
@@ -72,12 +82,27 @@ offset_bottom = 40.0
 [node name="Audio" type="Node" parent="." unique_id=426799178]
 script = ExtResource("4_og7js")
 
-[node name="BG_music" type="AudioStreamPlayer2D" parent="Audio" unique_id=1673619046]
-stream = ExtResource("5_qw4xk")
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="Audio" unique_id=1090517855]
+stream = ExtResource("5_ubl00")
 bus = &"Music"
 
 [node name="player_sfx" type="Node" parent="Audio" unique_id=2060257312]
 
-[node name="run_sfx" type="AudioStreamPlayer2D" parent="Audio/player_sfx" unique_id=837317523]
+[node name="jump_sfx" type="AudioStreamPlayer2D" parent="Audio/player_sfx" unique_id=971853492]
 stream = ExtResource("6_dik2r")
-bus = &"SFX"
+
+[node name="land_sfx" type="AudioStreamPlayer2D" parent="Audio/player_sfx" unique_id=912813690]
+volume_db = 10.0
+
+[node name="Triangle1" type="Sprite2D" parent="." unique_id=230050446]
+position = Vector2(38, 319)
+texture = ExtResource("7_ubl00")
+
+[node name="Triangle2" type="Sprite2D" parent="." unique_id=2140386386]
+position = Vector2(338, 315)
+scale = Vector2(-1, 1)
+texture = ExtResource("8_2qmdt")
+
+[node name="Triangle3" type="Sprite2D" parent="." unique_id=1152955366]
+position = Vector2(-221, 136)
+texture = ExtResource("9_fa1x2")

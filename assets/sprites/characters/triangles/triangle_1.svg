@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="90"
+   height="90"
+   viewBox="0 0 90 90"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   sodipodi:docname="triangle_1.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="31.289475"
+     inkscape:cy="54.447223"
+     inkscape:window-width="1920"
+     inkscape:window-height="1137"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect1"
+       style="fill:#ffc700;stroke-width:4;fill-opacity:1"
+       d="m 42.70753,7.514208 c 0,0 -8.956868,-0.3749504 -12.523338,7.76851 L 4.7123,73.443687 C 1.14583,81.587148 7.1566748,90 16.046875,90 h 57.90625 c 8.8902,0 13.727407,-5.456095 10.570418,-11.844013 L 53.702554,15.792156 C 49.458986,7.2056326 42.70753,7.514208 42.70753,7.514208 Z"
+       sodipodi:nodetypes="ssssssss" />
+    <ellipse
+       style="fill:#ffffff;stroke-width:7.48439"
+       id="path1"
+       cx="43.10326"
+       cy="58.870178"
+       rx="14.794572"
+       ry="23.68977" />
+    <ellipse
+       style="fill:#000001;fill-opacity:1;stroke-width:9.31437"
+       id="path2"
+       cx="51.448914"
+       cy="58.870178"
+       rx="6.4489141"
+       ry="13.870176" />
+    <rect
+       style="fill:#b7a600;fill-opacity:1;stroke-width:6.27621"
+       id="rect2"
+       width="33.165688"
+       height="8.1876163"
+       x="42.109032"
+       y="-12.052362"
+       ry="4.0938082"
+       transform="matrix(0.76809012,0.64034176,-0.52493798,0.85114048,0,0)"
+       inkscape:transform-center-x="-4.7941645"
+       inkscape:transform-center-y="-6.8601859" />
+  </g>
+</svg>
