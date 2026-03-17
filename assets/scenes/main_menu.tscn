@@ -20,6 +20,3 @@ position = Vector2(506, 315)
 
 [node name="GravFlipBut2" parent="." unique_id=1432184874 instance=ExtResource("3_obrqb")]
 position = Vector2(-143, -306)
-
-[node name="GravFlipBut3" parent="." unique_id=1742276203 instance=ExtResource("3_obrqb")]
-position = Vector2(0, 22)

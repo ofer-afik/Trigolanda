@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://dpeq2pln35ut"]
+
+[ext_resource type="FontFile" uid="uid://bir4n5dgqd7oa" path="res://assets/Modak-Regular.ttf" id="1_ht7no"]
+
+[resource]
+default_font = ExtResource("1_ht7no")
+default_font_size = 32

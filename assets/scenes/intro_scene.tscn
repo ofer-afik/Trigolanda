@@ -1,3 +1,14 @@
 [gd_scene format=3 uid="uid://cfuwr1yt765jm"]
 
-[node name="AnimationPlayer" type="AnimationPlayer" unique_id=445820473]
+[ext_resource type="Texture2D" uid="uid://c2wme3oy8kwgb" path="res://assets/sprites/empty_white.svg" id="1_h1i4f"]
+
+[node name="IntroScene" type="Node2D" unique_id=769958763]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=445820473]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1861903197]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1042321113]
+position = Vector2(-9.536747e-06, 7.134676e-05)
+scale = Vector2(1920, 1080.0001)
+texture = ExtResource("1_h1i4f")

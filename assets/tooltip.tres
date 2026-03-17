@@ -1,0 +1,26 @@
+[gd_resource type="Theme" format=3 uid="uid://c18r4g30xccnr"]
+
+[ext_resource type="FontFile" uid="uid://bir4n5dgqd7oa" path="res://assets/Modak-Regular.ttf" id="1_50hfy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_50hfy"]
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[resource]
+TooltipLabel/colors/font_color = Color(0, 0.6784314, 1, 1)
+TooltipLabel/constants/outline_size = 8
+TooltipLabel/font_sizes/font_size = 32
+TooltipLabel/fonts/font = ExtResource("1_50hfy")
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_50hfy")
