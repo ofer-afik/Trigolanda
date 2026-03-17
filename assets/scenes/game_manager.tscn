@@ -4,11 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://chjso4qkmt3t7" path="res://assets/sprites/background/curves.png" id="2_hwl8t"]
 [ext_resource type="PackedScene" uid="uid://bgc8wxui8niwq" path="res://assets/scenes/main_menu.tscn" id="3_hwl8t"]
 [ext_resource type="Script" uid="uid://brj8pty3w8cfw" path="res://assets/scripts/audio.gd" id="4_og7js"]
+[ext_resource type="PackedScene" uid="uid://b6p4nmolb4uli" path="res://assets/scenes/text_box.tscn" id="4_ubl00"]
 [ext_resource type="AudioStream" uid="uid://cp5oi26xjntsb" path="res://assets/sound/music/theme_track/export/theme_track_opening.wav" id="5_ubl00"]
 [ext_resource type="AudioStream" uid="uid://dideu7xgd3vcb" path="res://assets/sound/sfx/jump_sfx/export/jump_sfx.wav" id="6_dik2r"]
-[ext_resource type="Texture2D" uid="uid://dbetvqhyyl5tw" path="res://assets/sprites/characters/triangles/triangle_1.svg" id="7_ubl00"]
-[ext_resource type="Texture2D" uid="uid://cbr1dpo0y5hj3" path="res://assets/sprites/characters/triangles/triangle_2.svg" id="8_2qmdt"]
-[ext_resource type="Texture2D" uid="uid://vpmuau4yyxhq" path="res://assets/sprites/characters/triangles/triangle_3.svg" id="9_fa1x2"]
+[ext_resource type="Theme" uid="uid://c18r4g30xccnr" path="res://assets/tooltip.tres" id="7_p1ycl"]
 
 [sub_resource type="Environment" id="Environment_dik2r"]
 background_mode = 3
@@ -73,12 +72,6 @@ autoplay = &"background"
 
 [node name="MainMenu" parent="World2D" unique_id=1331045668 instance=ExtResource("3_hwl8t")]
 
-[node name="Control" type="Control" parent="." unique_id=397001563]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="Audio" type="Node" parent="." unique_id=426799178]
 script = ExtResource("4_og7js")
 
@@ -94,15 +87,25 @@ stream = ExtResource("6_dik2r")
 [node name="land_sfx" type="AudioStreamPlayer2D" parent="Audio/player_sfx" unique_id=912813690]
 volume_db = 10.0
 
-[node name="Triangle1" type="Sprite2D" parent="." unique_id=230050446]
-position = Vector2(38, 319)
-texture = ExtResource("7_ubl00")
+[node name="UI" type="CanvasLayer" parent="." unique_id=1090557825]
 
-[node name="Triangle2" type="Sprite2D" parent="." unique_id=2140386386]
-position = Vector2(338, 315)
-scale = Vector2(-1, 1)
-texture = ExtResource("8_2qmdt")
+[node name="Control" type="Control" parent="UI" unique_id=397001563]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("7_p1ycl")
+metadata/_edit_use_anchors_ = true
 
-[node name="Triangle3" type="Sprite2D" parent="." unique_id=1152955366]
-position = Vector2(-221, 136)
-texture = ExtResource("9_fa1x2")
+[node name="TextBox" parent="UI/Control" unique_id=630697749 instance=ExtResource("4_ubl00")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -11.95
+anchor_top = -3.975
+anchor_right = 3.725
+anchor_bottom = -2.175
+offset_left = 777.0
+offset_top = 805.0
+offset_right = 1532.0
+offset_bottom = 977.0
+metadata/_edit_use_anchors_ = true

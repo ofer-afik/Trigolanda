@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://b6p4nmolb4uli"]
+
+[ext_resource type="Texture2D" uid="uid://dwlshk5mgxvpt" path="res://assets/sprites/text_box/text_box.svg" id="1_ghwiw"]
+[ext_resource type="Texture2D" uid="uid://12t4lofgxtdw" path="res://assets/sprites/text_box/text_box_but_1.png" id="2_1nck5"]
+[ext_resource type="Texture2D" uid="uid://cfn8y46ccnaem" path="res://assets/sprites/text_box/text_box_but_2.png" id="3_ffm52"]
+[ext_resource type="Script" uid="uid://cqvuahsktrexa" path="res://assets/scripts/animate_text.gd" id="4_ffm52"]
+[ext_resource type="FontFile" uid="uid://bir4n5dgqd7oa" path="res://assets/Modak-Regular.ttf" id="4_u6lf0"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_u6lf0"]
+frames = 2
+frame_0/texture = ExtResource("2_1nck5")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("3_ffm52")
+frame_1/duration = 0.2
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_u6lf0"]
+script = ExtResource("4_ffm52")
+metadata/_custom_type_script = "uid://cqvuahsktrexa"
+
+[node name="TextBox" type="NinePatchRect" unique_id=630697749]
+offset_right = 575.0
+offset_bottom = 181.0
+texture = ExtResource("1_ghwiw")
+region_rect = Rect2(0, 0, 180, 180)
+patch_margin_left = 60
+patch_margin_top = 60
+patch_margin_right = 60
+patch_margin_bottom = 60
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=220307920]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -16.0
+offset_bottom = -42.0
+grow_horizontal = 0
+grow_vertical = 0
+tooltip_text = "Press Jump to continue!"
+texture = SubResource("AnimatedTexture_u6lf0")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1817956713]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = -31.0
+offset_bottom = -83.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_u6lf0")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "Text Box! Text Box! Text Box! Text Box! Text Box! "
+fit_content = true
+custom_effects = [SubResource("RichTextEffect_u6lf0")]
