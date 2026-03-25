@@ -6,7 +6,9 @@
 *.import
 *.mono.sln
 *.mono.csproj
-*.mono.userprefs
+*.mono.userpref
+/builds/
+
 
 # Excalidraw files
 *.excalidraw
