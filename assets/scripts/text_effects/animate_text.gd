@@ -2,7 +2,7 @@
 extends RichTextEffect
 class_name AnimateText
 
-var bbcode := "anim"
+var bbcode : String = "anim"
 
 func _process_custom_fx(char_fx: CharFXTransform) -> bool:
 	var speed = 30.0

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c2kbj3vkokt1f"]
+
+[ext_resource type="Script" uid="uid://dsl2we0e2b3gm" path="res://assets/scripts/audio_world_1.gd" id="1_i6ni1"]
+[ext_resource type="AudioStream" uid="uid://cp5oi26xjntsb" path="res://assets/sound/music/theme_track/export/theme_track_opening.wav" id="1_x5qqd"]
+[ext_resource type="AudioStream" uid="uid://dideu7xgd3vcb" path="res://assets/sound/sfx/jump_sfx/export/jump_sfx.wav" id="2_i6ni1"]
+
+[node name="AudioWorld1" type="Node" unique_id=1773685895]
+script = ExtResource("1_i6ni1")
+
+[node name="BGMusic" type="AudioStreamPlayer2D" parent="." unique_id=1899991491]
+stream = ExtResource("1_x5qqd")
+bus = &"Music"
+
+[node name="player_sfx" type="Node" parent="." unique_id=114578309]
+
+[node name="jump_sfx" type="AudioStreamPlayer2D" parent="player_sfx" unique_id=1881382335]
+stream = ExtResource("2_i6ni1")
+
+[node name="land_sfx" type="AudioStreamPlayer2D" parent="player_sfx" unique_id=388756551]
+volume_db = 10.0

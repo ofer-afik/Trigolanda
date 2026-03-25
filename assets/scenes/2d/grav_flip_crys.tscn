@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bc5d7mh2ud36n"]
 
-[ext_resource type="Script" uid="uid://bgyaiei3pue4h" path="res://assets/scripts/grav_flip_but.gd" id="1_s2flt"]
-[ext_resource type="Texture2D" uid="uid://dpanhbhol5jsm" path="res://assets/sprites/objects/grav_flip_gem.svg" id="1_xwukv"]
+[ext_resource type="Script" uid="uid://bgyaiei3pue4h" path="res://assets/scripts/grav_flip_but.gd" id="1_o30fm"]
+[ext_resource type="Texture2D" uid="uid://dpanhbhol5jsm" path="res://assets/sprites/objects/grav_flip_gem.svg" id="2_qllu1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s2flt"]
 radius = 11.0
@@ -55,17 +55,17 @@ _data = {
 &"idle": SubResource("Animation_s2flt")
 }
 
-[node name="GravFlipBut" type="Node2D" unique_id=1742276203]
+[node name="GravFlipCrys" type="Node2D" unique_id=1742276203]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=366145193]
 position = Vector2(0, -20)
-script = ExtResource("1_s2flt")
+script = ExtResource("1_o30fm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=47380643]
 shape = SubResource("CapsuleShape2D_s2flt")
 
 [node name="GravFlipGem" type="Sprite2D" parent="Area2D" unique_id=1112051645]
-texture = ExtResource("1_xwukv")
+texture = ExtResource("2_qllu1")
 
 [node name="PointLight2D" type="PointLight2D" parent="Area2D" unique_id=1233526137]
 color = Color(0.7041575, 0.007843138, 0.9711254, 1)

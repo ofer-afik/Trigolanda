@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="trigolanda"
+config/name="Trigolanda"
+config/version="0.1.0"
 run/main_scene="uid://bp0msfmifgxhv"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://u0jpqg0pofw2"
 
 [audio]
 
@@ -39,7 +40,6 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 [gui]
 
 timers/tooltip_delay_sec=0.0
-timers/tooltip_delay_sec.editor_hint=0.0
 
 [input]
 

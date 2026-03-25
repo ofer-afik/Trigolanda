@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://x3fmb3d36mc3"]
+
+[ext_resource type="Script" uid="uid://dodxvvvmukkni" path="res://assets/scripts/intro_scene_ui.gd" id="1_4rovh"]
+[ext_resource type="PackedScene" uid="uid://bxo2wnda5pbqb" path="res://assets/scenes/UI/text_box.tscn" id="2_s7kp7"]
+
+[node name="IntroSceneUI" type="Control" unique_id=442719089]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4rovh")
+
+[node name="TextBox1" parent="." unique_id=630697749 instance=ExtResource("2_s7kp7")]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = -409.0
+offset_right = -200.0
+offset_bottom = -100.0
+text = "[emph]Trigolanda[/emph]. The beautiful, peaceful, and unjust realm of triangles. Here, [emph]anything[/emph] can happen."
+
+[node name="RichTextLabel" parent="TextBox1" index="0" unique_id=1817956713]
+theme_override_font_sizes/normal_font_size = 56
+text = "[anim][emph]Trigolanda[/emph]. The beautiful, peaceful, and unjust realm of triangles. Here, [emph]anything[/emph] can happen."
+
+[node name="TextBox2" parent="." unique_id=1325213181 instance=ExtResource("2_s7kp7")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = -300.0
+offset_right = -200.0
+offset_bottom = -100.0
+text = "Once apon a time, in another multiverse, there was [emph]Trigolanda[/emph]. Somewhere in Trigolanda, a couple lived a happy quiet life."
+
+[node name="TextBox3" parent="." unique_id=80139914 instance=ExtResource("2_s7kp7")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = -300.0
+offset_right = -200.0
+offset_bottom = -100.0
+text = "After the two married, they started dreaming and wishing they had a [emph]baby[/emph], a young child they could care for, and [emph]love[/emph]. But he wasn't born as they wished... a [emph]mutant[/emph], a four-sided triangle!"
+
+[node name="TextBox4" parent="." unique_id=1530517324 instance=ExtResource("2_s7kp7")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = -300.0
+offset_right = -200.0
+offset_bottom = -100.0
+text = "Poor little [emph]Squirt[/emph] was doomed to be bullied his whole life... No one liked him, no one was allowed to like him. He was an unofficial [emph]outcast[/emph]."
+
+[node name="TextBox5" parent="." unique_id=2052410209 instance=ExtResource("2_s7kp7")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = -300.0
+offset_right = -200.0
+offset_bottom = -100.0
+text = "One day, when they were both running away from the mean bullies, little [emph]Squirt[/emph] ran into another misfit - young [emph]Cirky[/emph], a triangle with so many sides even she didn't know how many. "
+
+[node name="TextBox6" parent="." unique_id=484296376 instance=ExtResource("2_s7kp7")]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = -300.0
+offset_right = -200.0
+offset_bottom = -100.0
+text = "Together, the two new friends set out to find a society that [emph]accepts[/emph] them as they are. Will they be succeed? [emph]That[/emph] is up to you."
+
+[editable path="TextBox1"]

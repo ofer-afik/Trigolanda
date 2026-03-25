@@ -1,111 +1,29 @@
 [gd_scene format=3 uid="uid://bp0msfmifgxhv"]
 
 [ext_resource type="Script" uid="uid://dpfwqmtjh768c" path="res://assets/scripts/game_manager.gd" id="1_cffl0"]
-[ext_resource type="Texture2D" uid="uid://chjso4qkmt3t7" path="res://assets/sprites/background/curves.png" id="2_hwl8t"]
-[ext_resource type="PackedScene" uid="uid://bgc8wxui8niwq" path="res://assets/scenes/main_menu.tscn" id="3_hwl8t"]
-[ext_resource type="Script" uid="uid://brj8pty3w8cfw" path="res://assets/scripts/audio.gd" id="4_og7js"]
-[ext_resource type="PackedScene" uid="uid://b6p4nmolb4uli" path="res://assets/scenes/text_box.tscn" id="4_ubl00"]
-[ext_resource type="AudioStream" uid="uid://cp5oi26xjntsb" path="res://assets/sound/music/theme_track/export/theme_track_opening.wav" id="5_ubl00"]
-[ext_resource type="AudioStream" uid="uid://dideu7xgd3vcb" path="res://assets/sound/sfx/jump_sfx/export/jump_sfx.wav" id="6_dik2r"]
 [ext_resource type="Theme" uid="uid://c18r4g30xccnr" path="res://assets/tooltip.tres" id="7_p1ycl"]
 
 [sub_resource type="Environment" id="Environment_dik2r"]
 background_mode = 3
 glow_enabled = true
 
-[sub_resource type="Animation" id="Animation_pyh3q"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_hwl8t"]
-resource_name = "background"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(190, 190)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_og7js"]
-_data = {
-&"RESET": SubResource("Animation_pyh3q"),
-&"background": SubResource("Animation_hwl8t")
-}
-
 [node name="GameManager" type="Node" unique_id=1154234100]
 script = ExtResource("1_cffl0")
 
-[node name="World2D" type="Node2D" parent="." unique_id=786797176]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="World2D" unique_id=416416984]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=416416984]
 environment = SubResource("Environment_dik2r")
 
-[node name="Background" type="Sprite2D" parent="World2D" unique_id=1191978199]
-z_index = -10
-texture_repeat = 2
-texture = ExtResource("2_hwl8t")
-region_enabled = true
-region_rect = Rect2(0, 0, 3000, 2000)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="World2D/Background" unique_id=1003660302]
-libraries/ = SubResource("AnimationLibrary_og7js")
-autoplay = &"background"
-
-[node name="MainMenu" parent="World2D" unique_id=1331045668 instance=ExtResource("3_hwl8t")]
+[node name="World2D" type="Node2D" parent="." unique_id=786797176]
 
 [node name="Audio" type="Node" parent="." unique_id=426799178]
-script = ExtResource("4_og7js")
-
-[node name="BGMusic" type="AudioStreamPlayer2D" parent="Audio" unique_id=1090517855]
-stream = ExtResource("5_ubl00")
-bus = &"Music"
-
-[node name="player_sfx" type="Node" parent="Audio" unique_id=2060257312]
-
-[node name="jump_sfx" type="AudioStreamPlayer2D" parent="Audio/player_sfx" unique_id=971853492]
-stream = ExtResource("6_dik2r")
-
-[node name="land_sfx" type="AudioStreamPlayer2D" parent="Audio/player_sfx" unique_id=912813690]
-volume_db = 10.0
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1090557825]
 
 [node name="Control" type="Control" parent="UI" unique_id=397001563]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("7_p1ycl")
-metadata/_edit_use_anchors_ = true
-
-[node name="TextBox" parent="UI/Control" unique_id=630697749 instance=ExtResource("4_ubl00")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -11.95
-anchor_top = -3.975
-anchor_right = 3.725
-anchor_bottom = -2.175
-offset_left = 777.0
-offset_top = 805.0
-offset_right = 1532.0
-offset_bottom = 977.0
-metadata/_edit_use_anchors_ = true

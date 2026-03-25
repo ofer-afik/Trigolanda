@@ -30,8 +30,8 @@
      inkscape:document-units="px"
      showgrid="true"
      inkscape:zoom="5.6568542"
-     inkscape:cx="64.877048"
-     inkscape:cy="64.700271"
+     inkscape:cx="54.977553"
+     inkscape:cy="77.958523"
      inkscape:window-width="1920"
      inkscape:window-height="1137"
      inkscape:window-x="0"
@@ -127,5 +127,19 @@
        cy="10.46645"
        rx="1.6583768"
        ry="2.8016737" />
+    <ellipse
+       style="fill:#ff0000;fill-opacity:1;stroke-width:1.8697;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="path1"
+       cx="15.399813"
+       cy="14.764057"
+       rx="2.9565098"
+       ry="1.3243315" />
+    <ellipse
+       style="fill:#ff0000;fill-opacity:1;stroke-width:1.8697;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke"
+       id="ellipse2"
+       cx="24.90156"
+       cy="14.764057"
+       rx="2.9565098"
+       ry="1.3243315" />
   </g>
 </svg>

@@ -12,13 +12,13 @@ class_name Player extends CharacterBody2D
 # Slime trail variables
 @onready var ray_cast_rt : RayCast2D = $RayCastRight
 @onready var ray_cast_lt : RayCast2D = $RayCastLeft
-var slime_trail = preload("res://assets/scenes/slime_trail.tscn")
+var slime_trail = preload("res://assets/scenes/2d/player/slime_trail.tscn")
 var pos_last_slime_inst = 0.0
 var slime_interval = 20.0
 
 # Textures for left and right facing sprites
-var look_left = load("res://assets/sprites/characters/main_char/char_sprites/char_up_lt.png")
-var look_right = load("res://assets/sprites/characters/main_char/char_sprites/char_up_rt.png")
+var look_left = load("res://assets/sprites/characters/main_char/char_sprites/char_lt.png")
+var look_right = load("res://assets/sprites/characters/main_char/char_sprites/char_rt.png")
 
 # Movement state variables
 var last_grounded = 0.0
