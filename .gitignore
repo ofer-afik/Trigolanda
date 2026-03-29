@@ -7,7 +7,7 @@
 *.mono.sln
 *.mono.csproj
 *.mono.userpref
-builds/
+/builds/
 
 
 # Excalidraw files
