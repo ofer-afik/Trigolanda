@@ -70,10 +70,6 @@ func _physics_process(_delta: float) -> void:
 	if dead:
 		return
 	
-	# Restart
-	if Input.is_action_just_pressed("restart"):
-		die()
-	
 	# ---------- Handle input ----------
 	# Jump input
 	if Input.is_action_just_pressed("jump"):
