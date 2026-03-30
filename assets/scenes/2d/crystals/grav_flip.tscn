@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://bc5d7mh2ud36n"]
 
 [ext_resource type="Script" uid="uid://bgyaiei3pue4h" path="res://assets/scripts/grav_flip_but.gd" id="1_o30fm"]
-[ext_resource type="Texture2D" uid="uid://dpanhbhol5jsm" path="res://assets/sprites/objects/grav_flip_gem.svg" id="2_qllu1"]
+[ext_resource type="Texture2D" uid="uid://b58uin1hidfdt" path="res://assets/sprites/objects/crystals/GravFlip_crys.svg" id="2_wdca6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s2flt"]
 radius = 11.0
 height = 34.0
 
-[sub_resource type="Gradient" id="Gradient_xwukv"]
+[sub_resource type="Gradient" id="Gradient_wdca6"]
 interpolation_color_space = 2
 offsets = PackedFloat32Array(0, 0.17672414, 0.19396552, 0.7198276)
 colors = PackedColorArray(0.36282945, 0.36282945, 0.36282945, 1, 0.38928655, 0.38928664, 0.38928658, 1, 0.82616675, 0.82616675, 0.82616657, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_s2flt"]
-gradient = SubResource("Gradient_xwukv")
+gradient = SubResource("Gradient_wdca6")
 fill = 1
 fill_from = Vector2(0.51282054, 0.491453)
 
@@ -29,7 +29,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -20)]
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_s2flt"]
@@ -58,14 +58,13 @@ _data = {
 [node name="GravFlipCrys" type="Node2D" unique_id=1742276203]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=366145193]
-position = Vector2(0, -20)
 script = ExtResource("1_o30fm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=47380643]
 shape = SubResource("CapsuleShape2D_s2flt")
 
 [node name="GravFlipGem" type="Sprite2D" parent="Area2D" unique_id=1112051645]
-texture = ExtResource("2_qllu1")
+texture = ExtResource("2_wdca6")
 
 [node name="PointLight2D" type="PointLight2D" parent="Area2D" unique_id=1233526137]
 color = Color(0.7041575, 0.007843138, 0.9711254, 1)
@@ -78,4 +77,3 @@ libraries/ = SubResource("AnimationLibrary_dt166")
 autoplay = &"idle"
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

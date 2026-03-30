@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b5v1sdkn5hocd"]
+
+[ext_resource type="Script" uid="uid://b772q84byckh4" path="res://assets/scripts/demo_level_ui.gd" id="1_y3h5d"]
+[ext_resource type="FontFile" uid="uid://bir4n5dgqd7oa" path="res://assets/Modak-Regular.ttf" id="1_yedem"]
+[ext_resource type="Script" uid="uid://6hh8nh0bwqvo" path="res://assets/scripts/text_effects/empasis_text_effect.gd" id="2_y3h5d"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_l1q8b"]
+script = ExtResource("2_y3h5d")
+metadata/_custom_type_script = "uid://6hh8nh0bwqvo"
+
+[node name="demo_level_ui" type="Control" unique_id=1961495201]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y3h5d")
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=1003741007]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 237.0
+grow_horizontal = 2
+theme_override_fonts/normal_font = ExtResource("1_yedem")
+theme_override_font_sizes/normal_font_size = 150
+bbcode_enabled = true
+text = "[emph]Deaths: 0"
+horizontal_alignment = 2
+custom_effects = [SubResource("RichTextEffect_l1q8b")]

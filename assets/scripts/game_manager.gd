@@ -6,6 +6,8 @@ var intro : Control = null
 # Global variables
 var gravity = Vector2(0, 980)
 var player : Player
+var cur_checkpoint : Node2D
+var death_count = 0
 
 # World container nodes
 @onready var world_2d : Node2D = $World2D
@@ -29,7 +31,7 @@ func _ready() -> void:
 	to_scene(intro_2d, audio_world_1, intro_ui)
 
 # Universal functions to load levels, cutscenes, and much more
-func to_scene(scene_2d=main_menu_2d, scene_audio=audio_world_1, scene_ui=main_menu_ui):
+func to_scene(scene_2d, scene_audio, scene_ui):
 	# Clear Scenes
 	for node in world_2d.get_children():
 		node.queue_free()

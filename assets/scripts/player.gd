@@ -9,6 +9,8 @@ class_name Player extends CharacterBody2D
 @onready var anim_tree: AnimationTree = $AnimationTree
 @onready var global = Global
 
+var dead = false
+
 # Slime trail variables
 @onready var ray_cast_rt : RayCast2D = $RayCastRight
 @onready var ray_cast_lt : RayCast2D = $RayCastLeft
@@ -16,9 +18,10 @@ var slime_trail = preload("res://assets/scenes/2d/player/slime_trail.tscn")
 var pos_last_slime_inst = 0.0
 var slime_interval = 20.0
 
-# Textures for left and right facing sprites
-var look_left = load("res://assets/sprites/characters/main_char/char_sprites/char_lt.png")
-var look_right = load("res://assets/sprites/characters/main_char/char_sprites/char_rt.png")
+# Textures
+var look_left = preload("res://assets/sprites/characters/main_char/char_sprites/char_lt.png")
+var look_right = preload("res://assets/sprites/characters/main_char/char_sprites/char_rt.png")
+var afraid_texture = preload("res://assets/sprites/characters/main_char/char_sprites/char_afraid.png")
 
 # Movement state variables
 var last_grounded = 0.0
@@ -43,12 +46,33 @@ func _ready() -> void:
 	# Set anim_tree to active
 	anim_tree.active = true
 
+func die():
+	dead = true
+	Global.game_manager.death_count += 1
+	sprite.texture = afraid_texture
+	await get_tree().create_timer(0.5).timeout
+	global_position = Global.game_manager.cur_checkpoint.global_position
+	velocity = Vector2.ZERO
+	last_grounded = Time.get_ticks_msec()
+	last_jump_pressed = Time.get_ticks_msec() if Input.is_action_pressed("jump") else 0
+	sprite.texture = look_right
+	Global.game_manager.gravity = Vector2(0, 980)
+	up_direction = Vector2(0, -1)
+	dead = false
 
 # General movement and input handling
 func _physics_process(_delta: float) -> void:
 	# First second of the game, allow player to look around before gravity or input is applied.
 	if Time.get_ticks_msec() < 2000:
 		return
+	
+	# If dead, no input
+	if dead:
+		return
+	
+	# Restart
+	if Input.is_action_just_pressed("restart"):
+		die()
 	
 	# ---------- Handle input ----------
 	# Jump input
@@ -111,7 +135,7 @@ func _physics_process(_delta: float) -> void:
 	# Gravity
 	velocity.y += Global.game_manager.gravity.y / 30
 
-	velocity.y = clamp(velocity.y, -JUMP_VELOCITY, JUMP_VELOCITY)
+	velocity.y = clamp(velocity.y, -1200, 1200)
 
 	# ---------- Apply movement ----------
 	move_and_slide()

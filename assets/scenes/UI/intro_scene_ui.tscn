@@ -13,6 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_4rovh")
 
 [node name="TextBox1" parent="." unique_id=630697749 instance=ExtResource("2_s7kp7")]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -29,7 +30,6 @@ theme_override_font_sizes/normal_font_size = 56
 text = "[anim][emph]Trigolanda[/emph]. The beautiful, peaceful, and unjust realm of triangles. Here, [emph]anything[/emph] can happen."
 
 [node name="TextBox2" parent="." unique_id=1325213181 instance=ExtResource("2_s7kp7")]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 1.0
@@ -39,7 +39,7 @@ offset_left = 200.0
 offset_top = -300.0
 offset_right = -200.0
 offset_bottom = -100.0
-text = "Once apon a time, in another multiverse, there was [emph]Trigolanda[/emph]. Somewhere in Trigolanda, a couple lived a happy quiet life."
+text = "Once upon a time, in another multiverse, there was [emph]Trigolanda[/emph]. Somewhere in Trigolanda, a couple lived a happy quiet life."
 
 [node name="TextBox3" parent="." unique_id=80139914 instance=ExtResource("2_s7kp7")]
 visible = false
@@ -91,6 +91,6 @@ offset_left = 200.0
 offset_top = -300.0
 offset_right = -200.0
 offset_bottom = -100.0
-text = "Together, the two new friends set out to find a society that [emph]accepts[/emph] them as they are. Will they be succeed? [emph]That[/emph] is up to you."
+text = "Together, the two new friends set out to find a society that [emph]accepts[/emph] them as they are. Will they be successful? [emph]That[/emph] is up to you."
 
 [editable path="TextBox1"]

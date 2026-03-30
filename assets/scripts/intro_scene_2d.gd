@@ -1,5 +1,9 @@
 extends Node2D
 
+var main_menu_2d = preload("res://assets/scenes/2d/main_menu_2d.tscn")
+var audio_world_1 = preload("res://assets/scenes/Audio/audio_world_1.tscn")
+var main_menu_ui = preload("res://assets/scenes/UI/main_menu_ui.tscn")
+
 var text_boxes : Array[TextBox] = []
 var scenes : Array[Node2D] = []
 
@@ -35,8 +39,8 @@ func _input(event: InputEvent) -> void:
 			scene.visible = false
 		text_boxes[0].visible = true
 		scenes[0].visible = true
-		Global.game_manager.to_scene()
-	
+		Global.game_manager.to_scene(main_menu_2d, audio_world_1, main_menu_ui)
+
 func _exit_tree() -> void:
 	Global.game_manager.intro = null
 

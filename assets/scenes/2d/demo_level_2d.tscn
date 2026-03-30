@@ -1,0 +1,1395 @@
+[gd_scene format=4 uid="uid://pj5gp1ql5obi"]
+
+[ext_resource type="Texture2D" uid="uid://chjso4qkmt3t7" path="res://assets/sprites/background/curves.png" id="1_p0xkg"]
+[ext_resource type="TileSet" uid="uid://fjwxp4evlkh0" path="res://assets/sprites/map/tilemap/tile_set.tres" id="2_q6ynn"]
+[ext_resource type="PackedScene" uid="uid://bk7f7www5lwr2" path="res://assets/scenes/2d/player/player.tscn" id="3_v6dru"]
+[ext_resource type="Texture2D" uid="uid://b6k1uf70x0udv" path="res://assets/sprites/objects/trophy.svg" id="4_v6dru"]
+[ext_resource type="Script" uid="uid://bym4qvcflmade" path="res://assets/scripts/trophy.gd" id="5_l4epn"]
+[ext_resource type="PackedScene" uid="uid://tmfpmkhlbg8h" path="res://assets/scenes/2d/crystals/soul_cry.tscn" id="5_rr5b4"]
+[ext_resource type="PackedScene" uid="uid://bxo2wnda5pbqb" path="res://assets/scenes/UI/text_box.tscn" id="6_pa72e"]
+[ext_resource type="Script" uid="uid://nes7hh5aq7sp" path="res://assets/scripts/timer_queuefree_template.gd" id="6_vro2o"]
+[ext_resource type="FontFile" uid="uid://bir4n5dgqd7oa" path="res://assets/Modak-Regular.ttf" id="8_w44jd"]
+[ext_resource type="PackedScene" uid="uid://bk1pmiqxxj2to" path="res://assets/scenes/2d/crys_bush.tscn" id="9_rejs0"]
+[ext_resource type="PackedScene" uid="uid://bc5d7mh2ud36n" path="res://assets/scenes/2d/crystals/grav_flip.tscn" id="10_xhv7h"]
+
+[sub_resource type="Animation" id="Animation_pyh3q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hwl8t"]
+resource_name = "background"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(190, 190)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o7ra5"]
+_data = {
+&"RESET": SubResource("Animation_pyh3q"),
+&"background": SubResource("Animation_hwl8t")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhv7h"]
+size = Vector2(211, 188)
+
+[node name="DemoLevel2D" type="Node2D" unique_id=1601629831]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=718272607]
+z_index = -10
+texture_repeat = 2
+texture = ExtResource("1_p0xkg")
+region_enabled = true
+region_rect = Rect2(0, 248.721, 7000, 3000)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background" unique_id=2020687534]
+libraries/ = SubResource("AnimationLibrary_o7ra5")
+autoplay = &"background"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=474097351]
+tile_map_data = PackedByteArray("AAAlAA8AAAAAAAEAAAAkAA8AAAABAAEAAAAjAA8AAAABAAEAAAAiAA8AAAABAAEAAAAhAA8AAAABAAEAAAAgAA8AAAABAAEAAAAfAA8AAAABAAEAAAAeAA8AAAABAAEAAAAdAA8AAAABAAEAAAAcAA8AAAABAAEAAAAbAA8AAAABAAEAAAAaAA8AAAABAAEAAAAZAA8AAAABAAEAAAAYAA8AAAABAAEAAAAXAA8AAAABAAEAAAAWAA8AAAABAAEAAAAVAA8AAAABAAEAAAAUAA8AAAABAAEAAAATAA8AAAABAAEAAAASAA8AAAABAAEAAAARAA8AAAABAAEAAAAQAA8AAAABAAEAAAAPAA8AAAABAAEAAAAOAA8AAAABAAEAAAANAA8AAAABAAEAAAAMAA8AAAABAAEAAAALAA8AAAABAAEAAAAKAA8AAAABAAEAAAAJAA8AAAABAAEAAAAIAA8AAAABAAEAAAAHAA8AAAABAAEAAAAGAA8AAAABAAEAAAAFAA8AAAABAAEAAAAEAA8AAAABAAEAAAADAA8AAAABAAEAAAACAA8AAAABAAEAAAABAA8AAAABAAEAAAAAAA8AAAABAAEAAAD//w8AAAABAAEAAAD+/w8AAAABAAEAAAD9/w8AAAABAAEAAAD8/w8AAAABAAEAAAD7/w8AAAABAAEAAAD6/w8AAAABAAEAAAD5/w8AAAABAAEAAAD4/w8AAAABAAEAAAD3/w8AAAABAAEAAAD2/w8AAAABAAEAAAD1/w8AAAABAAEAAAD0/w8AAAABAAEAAADz/w8AAAABAAEAAADy/w8AAAABAAEAAADx/w8AAAABAAEAAADw/w8AAAABAAEAAADv/w8AAAABAAEAAADu/w8AAAABAAEAAADt/w8AAAABAAEAAADs/w8AAAABAAEAAADr/w8AAAABAAEAAADq/w8AAAAAAAEAAADp/w8AAAABAAEAAADo/w8AAAABAAEAAADn/w8AAAABAAEAAADm/w8AAAABAAEAAADl/w8AAAABAAEAAADk/w8AAAABAAEAAADj/w8AAAABAAEAAADi/w8AAAABAAEAAADh/w8AAAABAAEAAADg/w8AAAAAAAEAAADf/w8AAAABAAEAAADe/w8AAAABAAEAAADd/w8AAAABAAEAAADc/w8AAAAAAAEAAAAlAA4AAAABAAAAAAAlAA0AAAABAAAAAAAlAAwAAAABAAAAAAAlAAsAAAABAAAAAAAlAAoAAAABAAAAAAAlAAkAAAABAAAAAAAlAAgAAAABAAAAAAAlAAcAAAABAAAAAAAlAAYAAAABAAAAAAAlAAUAAAABAAAAAAAlAAQAAAABAAAAAAAlAAMAAAABAAAAAAAlAAIAAAABAAAAAAAlAAEAAAABAAAAAAAlAAAAAAABAAAAAAAlAP//AAABAAAAAAAlAP7/AAABAAAAAAAlAP3/AAABAAAAAAAlAPz/AAABAAAAAAAlAPv/AAABAAAAAAAlAPr/AAABAAAAAAAlAPn/AAABAAAAAAAlAPj/AAABAAAAAAAlAPf/AAABAAAAAAAlAPb/AAABAAAAAAAlAPX/AAABAAAAAAAlAPT/AAABAAAAAADc/w4AAAABAAAAAADc/w0AAAABAAAAAADc/wwAAAABAAAAAADc/wsAAAABAAAAAADc/woAAAABAAAAAADc/wkAAAABAAAAAADc/wgAAAABAAAAAADc/wcAAAABAAAAAADc/wYAAAABAAAAAADc/wUAAAABAAAAAADc/wQAAAABAAAAAADc/wMAAAABAAAAAADc/wIAAAABAAAAAADc/wEAAAABAAAAAADc/wAAAAABAAAAAADc////AAABAAAAAADc//7/AAABAAAAAADc//3/AAABAAAAAADc//z/AAABAAAAAADc//v/AAABAAAAAADc//r/AAABAAAAAADc//n/AAABAAAAAADc//j/AAABAAAAAADc//f/AAABAAAAAADc//b/AAABAAAAAAAlAPP/AAAAAAAAAAAkAPP/AAABAAEAAAAjAPP/AAABAAEAAAAiAPP/AAABAAEAAAAhAPP/AAAAAAAAAAAgAPP/AAABAAEAAAAfAPP/AAABAAEAAAAeAPP/AAABAAEAAAAdAPP/AAAAAAAAAAAcAPP/AAABAAEAAAAbAPP/AAABAAEAAAAaAPP/AAABAAEAAAAZAPP/AAAAAAAAAAAYAPP/AAABAAEAAAAXAPP/AAABAAEAAAAWAPP/AAABAAEAAAAVAPP/AAAAAAAAAAAUAPP/AAABAAEAAAATAPP/AAABAAEAAAASAPP/AAABAAEAAAARAPP/AAABAAEAAAAQAPP/AAABAAEAAAAPAPP/AAABAAEAAAAOAPP/AAABAAEAAAANAPP/AAABAAEAAAAMAPP/AAABAAEAAAALAPP/AAABAAEAAAAKAPP/AAABAAEAAAAJAPP/AAABAAEAAAAIAPP/AAABAAEAAAAHAPP/AAABAAEAAAAGAPP/AAABAAEAAAAFAPP/AAABAAEAAAAEAPP/AAABAAEAAAADAPP/AAABAAEAAAACAPP/AAABAAEAAAABAPP/AAABAAEAAAAAAPP/AAABAAEAAAD///P/AAABAAEAAAD+//P/AAABAAEAAAD9//P/AAABAAEAAAD8//P/AAABAAEAAAD7//P/AAABAAEAAAD6//P/AAABAAEAAAD5//P/AAABAAEAAAD4//P/AAABAAEAAAD3//P/AAABAAEAAAD2//P/AAABAAEAAAD1//P/AAABAAEAAAD0//P/AAABAAEAAADz//P/AAABAAEAAADy//P/AAABAAEAAADx//P/AAABAAEAAADw//P/AAABAAEAAADv//P/AAABAAEAAADu//P/AAABAAEAAADt//P/AAABAAEAAADs//P/AAABAAEAAADr//P/AAABAAEAAADq//P/AAABAAEAAADp//P/AAABAAEAAADo//P/AAABAAEAAADn//P/AAABAAEAAADm//P/AAABAAEAAADl//P/AAABAAEAAADk//P/AAABAAEAAADj//P/AAABAAEAAADi//P/AAABAAEAAADh//P/AAABAAEAAADg//P/AAABAAEAAADf//P/AAABAAEAAADe//P/AAABAAEAAADd//P/AAABAAEAAADc//X/AAABAAAAAADc//T/AAABAAAAAADc//P/AAAAAAAAAADd//b/AAABAAEAAADe//b/AAABAAEAAADf//b/AAABAAEAAADg//n/AAABAAAAAADg//r/AAABAAAAAADg//v/AAABAAAAAADg//z/AAAAAAEAAADg/wAAAAABAAAAAADg/wEAAAABAAAAAADg/wIAAAABAAAAAADg/wMAAAABAAAAAADg/wQAAAABAAAAAADg/wUAAAABAAAAAADg/wYAAAABAAAAAADg/wcAAAABAAAAAADg/wgAAAABAAAAAADg/wkAAAABAAAAAADd//j/AAABAAEAAADe//j/AAABAAEAAADe//z/AAABAAEAAADf//z/AAABAAEAAADg/woAAAABAAAAAADg/wsAAAABAAAAAADg/wwAAAABAAAAAADg////AAAAAAAAAADg/w0AAAABAAAAAADg/w4AAAABAAAAAADh//z/AAABAAEAAADi//z/AAABAAEAAADm//z/AAABAAEAAADn//z/AAABAAEAAADo//z/AAABAAEAAADp//z/AAABAAEAAADq//z/AAAAAAAAAADt//z/AAAAAAEAAADu//z/AAABAAEAAADv//z/AAABAAEAAADw//z/AAABAAEAAADx//z/AAABAAEAAADy//z/AAABAAEAAADz//z/AAABAAEAAAD0//z/AAABAAEAAAD1//z/AAABAAEAAAD2//z/AAABAAEAAAD3//z/AAABAAEAAAD4//z/AAABAAEAAAD5//z/AAABAAEAAAD6//z/AAABAAEAAAD7//z/AAABAAEAAAD8//z/AAABAAEAAAD9//z/AAABAAEAAAD+//z/AAABAAEAAAD///z/AAABAAEAAAAAAPz/AAABAAEAAAABAPz/AAABAAEAAAACAPz/AAABAAEAAAADAPz/AAABAAEAAAAEAPz/AAABAAEAAAAFAPz/AAABAAEAAAAGAPz/AAABAAEAAAAHAPz/AAABAAEAAAAIAPz/AAABAAEAAAAJAPz/AAABAAEAAAAKAPz/AAABAAEAAAALAPz/AAABAAEAAAAMAPz/AAABAAEAAAANAPz/AAABAAEAAAAOAPz/AAABAAEAAAAPAPz/AAABAAEAAAAQAPz/AAABAAEAAAARAPz/AAABAAEAAAASAPz/AAABAAEAAAATAPz/AAABAAEAAAAUAPz/AAABAAEAAAAVAPz/AAABAAEAAAAWAPz/AAABAAEAAAAXAPz/AAAAAAEAAAAYAPz/AAABAAEAAAAZAPz/AAABAAEAAAAaAPz/AAABAAEAAAAbAPz/AAAAAAEAAAAcAPz/AAABAAEAAAAdAPz/AAABAAEAAAAeAPz/AAABAAEAAAAfAPz/AAAAAAEAAAAgAPz/AAABAAEAAAAhAPz/AAABAAEAAAAiAPz/AAABAAEAAADk//r/AAAAAAAAAADl//r/AAABAAEAAADm//r/AAABAAEAAADn//r/AAABAAEAAADo//r/AAABAAEAAADq/w4AAAABAAAAAADq/w0AAAABAAAAAADq/wwAAAABAAAAAADq/wsAAAABAAAAAADq/woAAAABAAAAAADq/wkAAAABAAAAAADq/wgAAAABAAAAAADq/wcAAAABAAAAAADq/wYAAAABAAAAAADq/wUAAAABAAAAAADq/wQAAAABAAAAAADq/wMAAAABAAAAAADq/wIAAAABAAAAAADq/wEAAAABAAAAAADq/wAAAAABAAAAAADq////AAABAAAAAADq//7/AAABAAAAAADq//3/AAABAAAAAADp//r/AAABAAEAAADq//r/AAABAAEAAADr//r/AAABAAEAAADs//r/AAABAAEAAADt//r/AAAAAAAAAADt//v/AAABAAAAAADr//3/AAABAAEAAADk//v/AAABAAAAAADk//z/AAAAAAEAAADj//z/AAABAAEAAAAiAP7/AAABAAEAAADx//7/AAABAAEAAADz//7/AAABAAEAAAD0//7/AAABAAEAAAD1//7/AAABAAEAAAD2//7/AAABAAEAAAD3//7/AAABAAEAAAD4//7/AAABAAEAAAD5//7/AAABAAEAAAD6//7/AAABAAEAAAD7//7/AAABAAEAAAD8//7/AAABAAEAAAD9//7/AAABAAEAAAD+//7/AAABAAEAAAD///7/AAABAAEAAAAAAP7/AAABAAEAAAABAP7/AAABAAEAAAACAP7/AAABAAEAAAADAP7/AAABAAEAAAAEAP7/AAABAAEAAAAFAP7/AAABAAEAAAAGAP7/AAABAAEAAAAHAP7/AAABAAEAAAAIAP7/AAABAAEAAAAJAP7/AAABAAEAAAAKAP7/AAABAAEAAAALAP7/AAABAAEAAAAMAP7/AAABAAEAAAANAP7/AAABAAEAAAAOAP7/AAABAAEAAAAPAP7/AAABAAEAAAAQAP7/AAABAAEAAAARAP7/AAABAAEAAAASAP7/AAABAAEAAAATAP7/AAABAAEAAAAUAP7/AAABAAEAAAAVAP7/AAABAAEAAAAWAP7/AAABAAEAAAAXAP7/AAABAAEAAAAYAP7/AAABAAEAAAAZAP7/AAABAAEAAAAaAP7/AAABAAEAAAAbAP7/AAABAAEAAAAcAP7/AAABAAEAAAAdAP7/AAABAAEAAAAeAP7/AAABAAEAAAAfAP7/AAABAAEAAAAgAP7/AAABAAEAAAAhAP7/AAABAAEAAAAjAP7/AAABAAEAAAAkAP7/AAABAAEAAADr////AAABAAEAAADs////AAABAAEAAADt////AAABAAEAAADz/wAAAAABAAEAAAD0/wAAAAABAAEAAAD1/wAAAAABAAEAAAD5/wIAAAABAAEAAAD6/wIAAAABAAEAAAD7/wIAAAABAAEAAAD//wQAAAABAAEAAAAAAAQAAAABAAEAAAABAAQAAAABAAEAAAAFAAYAAAABAAEAAAAGAAYAAAABAAEAAAAHAAYAAAABAAEAAAALAAgAAAABAAEAAAAMAAgAAAABAAEAAAANAAgAAAABAAEAAAARAAoAAAABAAEAAAASAAoAAAABAAEAAAATAAoAAAABAAEAAADy/wAAAAABAAEAAAAYAAkAAAABAAEAAAAZAAkAAAABAAEAAAAaAAkAAAABAAEAAAAbAAkAAAABAAEAAAAcAAkAAAABAAEAAAAdAAkAAAABAAEAAAAeAAkAAAABAAEAAAAfAAkAAAABAAEAAAAgAAkAAAABAAEAAAAhAAkAAAABAAEAAAAiAAkAAAABAAEAAADw//7/AAABAAEAAAAhAPT/AAABAAAAAAAhAPX/AAABAAAAAAAhAPb/AAABAAAAAAAhAPf/AAABAAAAAAAhAPj/AAABAAAAAAAfAPv/AAABAAAAAAAfAPr/AAABAAAAAAAfAPn/AAABAAAAAAAfAPj/AAABAAAAAAAfAPf/AAABAAAAAAAdAPT/AAABAAAAAAAdAPX/AAABAAAAAAAdAPb/AAABAAAAAAAdAPf/AAABAAAAAAAdAPj/AAABAAAAAAAdAPn/AAAAAAEAAAAhAPn/AAAAAAEAAAAfAPb/AAAAAAAAAAAbAPv/AAABAAAAAAAbAPr/AAABAAAAAAAbAPn/AAABAAAAAAAbAPj/AAABAAAAAAAbAPf/AAABAAAAAAAbAPb/AAAAAAAAAAAZAPT/AAABAAAAAAAZAPX/AAABAAAAAAAZAPf/AAABAAAAAAAZAPb/AAABAAAAAAAXAPv/AAABAAAAAAAXAPr/AAABAAAAAAAXAPn/AAABAAAAAAAXAPj/AAABAAAAAAAXAPf/AAABAAAAAAAXAPb/AAAAAAAAAAAjAPz/AAAAAAEAAAAjAPv/AAABAAAAAAAjAPr/AAABAAAAAAAjAPn/AAABAAAAAAAjAPj/AAABAAAAAAAjAPf/AAABAAAAAAAjAPb/AAAAAAAAAAAZAPn/AAAAAAEAAAAZAPj/AAABAAAAAAAVAPT/AAABAAAAAAAVAPX/AAAAAAEAAADg//X/AAAAAAAAAADg//f/AAABAAAAAADg//b/AAABAAAAAADg//j/AAABAAAAAADh//X/AAABAAEAAADi//X/AAAAAAAAAADp//X/AAAAAAAAAADq//X/AAABAAEAAADr//X/AAABAAEAAADs//X/AAABAAEAAADt//X/AAABAAEAAADu//X/AAABAAEAAADv//X/AAABAAEAAADw//X/AAABAAEAAADx//X/AAABAAEAAADy//X/AAABAAEAAADz//X/AAABAAEAAAD0//X/AAABAAEAAAD1//X/AAABAAEAAAD2//X/AAABAAEAAAD3//X/AAABAAEAAAD4//X/AAABAAEAAAD5//X/AAABAAEAAAD6//X/AAABAAEAAAD7//X/AAABAAEAAAD8//X/AAABAAEAAAD9//X/AAABAAEAAAD+//X/AAABAAEAAAD///X/AAABAAEAAAAAAPX/AAABAAEAAAABAPX/AAABAAEAAAACAPX/AAABAAEAAAADAPX/AAABAAEAAAAEAPX/AAABAAEAAAAFAPX/AAABAAEAAAAGAPX/AAABAAEAAAAHAPX/AAABAAEAAAAIAPX/AAABAAEAAAAJAPX/AAABAAEAAAAKAPX/AAABAAEAAAALAPX/AAABAAEAAAAMAPX/AAABAAEAAAANAPX/AAABAAEAAAAOAPX/AAABAAEAAAAPAPX/AAABAAEAAAAQAPX/AAABAAEAAAARAPX/AAABAAEAAAASAPX/AAABAAEAAAATAPX/AAABAAEAAAARAPn/AAABAAEAAAASAPn/AAABAAEAAAAEAPr/AAABAAEAAAACAPr/AAABAAEAAAD///r/AAABAAEAAAD9//r/AAABAAEAAAD7//r/AAABAAEAAAD6//r/AAABAAEAAAD3//r/AAABAAEAAADz//r/AAABAAEAAADy//r/AAABAAEAAADx//r/AAABAAEAAADk//b/AAABAAEAAADl//b/AAABAAEAAADm//b/AAABAAEAAADn//b/AAABAAEAAADp//b/AAAAAAEAAADi//b/AAAAAAEAAADo//b/AAABAAEAAADj//b/AAABAAEAAAA=")
+tile_set = ExtResource("2_q6ynn")
+
+[node name="Player" parent="." unique_id=1227811721 instance=ExtResource("3_v6dru")]
+position = Vector2(-3098, -720)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1229027381]
+limit_left = -3310
+limit_top = -1310
+limit_right = 3500
+limit_bottom = 1500
+position_smoothing_enabled = true
+
+[node name="TextBoxes" type="Timer" parent="." unique_id=1933367613]
+wait_time = 45.0
+autostart = true
+script = ExtResource("6_vro2o")
+
+[node name="TextBox" parent="TextBoxes" unique_id=630697749 instance=ExtResource("6_pa72e")]
+visible = false
+z_index = 1
+offset_left = -3157.0
+offset_top = -1077.0
+offset_right = -1950.0
+offset_bottom = -896.0
+text = "[emph]Wait![/emph] Before you start, a bit of info. In 45 seconds the textboxes will disappear and you will see what is above you..."
+
+[node name="TextBox2" parent="TextBoxes" unique_id=826287025 instance=ExtResource("6_pa72e")]
+visible = false
+z_index = 1
+offset_left = -2817.0
+offset_top = -859.0
+offset_right = -2173.0
+offset_bottom = -678.0
+text = "The green [emph]SoulCry[/emph] crystal stores a bit of your soul, so you can regenerate."
+
+[node name="TextBox3" parent="TextBoxes" unique_id=261945285 instance=ExtResource("6_pa72e")]
+visible = false
+z_index = 1
+offset_left = -3178.0
+offset_top = -663.0
+offset_right = -2183.0
+offset_bottom = -438.0
+text = "You might also see purple crystals here - they're the [emph]GravFlip[/emph] crystals. Whoever named the crystals (native plants in this multiverse) really wasn't very creative"
+
+[node name="TextBox5" parent="TextBoxes" unique_id=43315857 instance=ExtResource("6_pa72e")]
+visible = false
+z_index = 1
+offset_left = -3197.0
+offset_top = -364.0
+offset_right = -2431.0
+offset_bottom = -194.0
+text = "These bushes are what crystals grow on. Be careful, the bushes are [emph]poisonous[/emph]!"
+
+[node name="TextBox4" parent="TextBoxes" unique_id=845550480 instance=ExtResource("6_pa72e")]
+visible = false
+z_index = 1
+offset_left = -2395.0
+offset_top = -378.0
+offset_right = -1400.0
+offset_bottom = -189.0
+text = "This is just a demo section - instead of the full world you must explore to find a home, just get to the trophy"
+
+[node name="Label" type="Label" parent="TextBoxes" unique_id=632341981]
+visible = false
+z_index = 1
+offset_left = -2059.0
+offset_top = -742.0
+offset_right = -1538.0
+offset_bottom = -548.0
+theme_override_colors/font_color = Color(0, 0, 0.4862745, 1)
+theme_override_fonts/font = ExtResource("8_w44jd")
+theme_override_font_sizes/font_size = 128
+text = "Read it!!!"
+
+[node name="SoulCries" type="Node" parent="." unique_id=1756297117]
+
+[node name="SoulCry" parent="SoulCries" unique_id=299782498 instance=ExtResource("5_rr5b4")]
+position = Vector2(-3031, -758)
+
+[node name="SoulCry2" parent="SoulCries" unique_id=184676324 instance=ExtResource("5_rr5b4")]
+position = Vector2(-2387, 1278)
+
+[node name="SoulCry3" parent="SoulCries" unique_id=1310635057 instance=ExtResource("5_rr5b4")]
+position = Vector2(-1838, -129)
+
+[node name="SoulCry4" parent="SoulCries" unique_id=884224902 instance=ExtResource("5_rr5b4")]
+position = Vector2(3285, -229)
+
+[node name="SoulCry5" parent="SoulCries" unique_id=1404094445 instance=ExtResource("5_rr5b4")]
+position = Vector2(2118, -991)
+
+[node name="CrystalBushes" type="Node" parent="." unique_id=1929404802]
+
+[node name="CrysBush" parent="CrystalBushes" unique_id=1338103894 instance=ExtResource("9_rejs0")]
+position = Vector2(-2928, -360)
+
+[node name="CrysBush2" parent="CrystalBushes" unique_id=51171540 instance=ExtResource("9_rejs0")]
+position = Vector2(-3018, -360)
+
+[node name="CrysBush3" parent="CrystalBushes" unique_id=12366646 instance=ExtResource("9_rejs0")]
+position = Vector2(-2880, -406)
+rotation = -1.5707964
+
+[node name="CrysBush4" parent="CrystalBushes" unique_id=250396626 instance=ExtResource("9_rejs0")]
+position = Vector2(-3103, 1350)
+
+[node name="CrysBush5" parent="CrystalBushes" unique_id=1072880100 instance=ExtResource("9_rejs0")]
+position = Vector2(-3016, 1350)
+
+[node name="CrysBush6" parent="CrystalBushes" unique_id=1590314966 instance=ExtResource("9_rejs0")]
+position = Vector2(-2925, 1350)
+
+[node name="CrysBush7" parent="CrystalBushes" unique_id=391564575 instance=ExtResource("9_rejs0")]
+position = Vector2(-2746, 1350)
+
+[node name="CrysBush8" parent="CrystalBushes" unique_id=2075485259 instance=ExtResource("9_rejs0")]
+position = Vector2(-2655, 1350)
+
+[node name="CrysBush9" parent="CrystalBushes" unique_id=966940039 instance=ExtResource("9_rejs0")]
+position = Vector2(-2835, -270)
+rotation = 3.1415927
+
+[node name="CrysBush11" parent="CrystalBushes" unique_id=1588466985 instance=ExtResource("9_rejs0")]
+position = Vector2(-2743, -270)
+rotation = 3.1415927
+
+[node name="CrysBush12" parent="CrystalBushes" unique_id=1850643333 instance=ExtResource("9_rejs0")]
+position = Vector2(-2658, -270)
+rotation = 3.1415927
+
+[node name="CrysBush27" parent="CrystalBushes" unique_id=842771168 instance=ExtResource("9_rejs0")]
+position = Vector2(-2565, -270)
+rotation = 3.1415927
+
+[node name="CrysBush28" parent="CrystalBushes" unique_id=1917398136 instance=ExtResource("9_rejs0")]
+position = Vector2(-2474, -270)
+rotation = 3.1415927
+
+[node name="CrysBush10" parent="CrystalBushes" unique_id=1939162901 instance=ExtResource("9_rejs0")]
+position = Vector2(-3015, -270)
+rotation = 3.1415927
+
+[node name="CrysBush13" parent="CrystalBushes" unique_id=529316378 instance=ExtResource("9_rejs0")]
+position = Vector2(-2567, 1350)
+
+[node name="CrysBush14" parent="CrystalBushes" unique_id=885423532 instance=ExtResource("9_rejs0")]
+position = Vector2(-2476, 1350)
+
+[node name="CrysBush15" parent="CrystalBushes" unique_id=376446667 instance=ExtResource("9_rejs0")]
+position = Vector2(-2296, 1350)
+
+[node name="CrysBush20" parent="CrystalBushes" unique_id=1226985008 instance=ExtResource("9_rejs0")]
+position = Vector2(-2116, 1350)
+
+[node name="CrysBush21" parent="CrystalBushes" unique_id=421625122 instance=ExtResource("9_rejs0")]
+position = Vector2(-2026, 1350)
+
+[node name="CrysBush16" parent="CrystalBushes" unique_id=1482645756 instance=ExtResource("9_rejs0")]
+position = Vector2(-2294, -270)
+rotation = 3.1415927
+
+[node name="CrysBush31" parent="CrystalBushes" unique_id=700341989 instance=ExtResource("9_rejs0")]
+position = Vector2(-2386, -1080)
+rotation = 3.1415927
+
+[node name="CrysBush17" parent="CrystalBushes" unique_id=1927802192 instance=ExtResource("9_rejs0")]
+position = Vector2(-2203, -270)
+rotation = 3.1415927
+
+[node name="CrysBush18" parent="CrystalBushes" unique_id=1613779337 instance=ExtResource("9_rejs0")]
+position = Vector2(-2112, -270)
+rotation = 3.1415927
+
+[node name="CrysBush19" parent="CrystalBushes" unique_id=1399632833 instance=ExtResource("9_rejs0")]
+position = Vector2(-2025, -270)
+rotation = 3.1415927
+
+[node name="CrysBush22" parent="CrystalBushes" unique_id=1176477341 instance=ExtResource("9_rejs0")]
+position = Vector2(-1753, -450)
+rotation = 3.1415927
+
+[node name="CrysBush23" parent="CrystalBushes" unique_id=1523827385 instance=ExtResource("9_rejs0")]
+position = Vector2(-1890, -314)
+rotation = 1.5707964
+
+[node name="CrysBush25" parent="CrystalBushes" unique_id=2081598142 instance=ExtResource("9_rejs0")]
+position = Vector2(-1710, -403)
+rotation = -1.5707964
+
+[node name="CrysBush26" parent="CrystalBushes" unique_id=1441528078 instance=ExtResource("9_rejs0")]
+position = Vector2(-1710, -316)
+rotation = -1.5707964
+
+[node name="CrysBush29" parent="CrystalBushes" unique_id=1825681570 instance=ExtResource("9_rejs0")]
+position = Vector2(-1306, -180)
+
+[node name="CrysBush30" parent="CrystalBushes" unique_id=668550713 instance=ExtResource("9_rejs0")]
+position = Vector2(-1396, -180)
+
+[node name="CrysBush24" parent="CrystalBushes" unique_id=1415243092 instance=ExtResource("9_rejs0")]
+position = Vector2(-1843, -270)
+
+[node name="CrysBush34" parent="CrystalBushes" unique_id=2064789614 instance=ExtResource("9_rejs0")]
+position = Vector2(-1035, -270)
+rotation = 3.1415927
+
+[node name="CrysBush35" parent="CrystalBushes" unique_id=1044944379 instance=ExtResource("9_rejs0")]
+position = Vector2(-940, -270)
+rotation = 3.1415927
+
+[node name="CrysBush36" parent="CrystalBushes" unique_id=323619418 instance=ExtResource("9_rejs0")]
+position = Vector2(-847, -270)
+rotation = 3.1415927
+
+[node name="CrysBush37" parent="CrystalBushes" unique_id=1890149525 instance=ExtResource("9_rejs0")]
+position = Vector2(-751, -270)
+rotation = 3.1415927
+
+[node name="CrysBush38" parent="CrystalBushes" unique_id=846404489 instance=ExtResource("9_rejs0")]
+position = Vector2(-667, -270)
+rotation = 3.1415927
+
+[node name="CrysBush39" parent="CrystalBushes" unique_id=1934291073 instance=ExtResource("9_rejs0")]
+position = Vector2(-579, -270)
+rotation = 3.1415927
+
+[node name="CrysBush40" parent="CrystalBushes" unique_id=1989882447 instance=ExtResource("9_rejs0")]
+position = Vector2(-492, -270)
+rotation = 3.1415927
+
+[node name="CrysBush41" parent="CrystalBushes" unique_id=168658468 instance=ExtResource("9_rejs0")]
+position = Vector2(-397, -270)
+rotation = 3.1415927
+
+[node name="CrysBush42" parent="CrystalBushes" unique_id=786803897 instance=ExtResource("9_rejs0")]
+position = Vector2(-304, -270)
+rotation = 3.1415927
+
+[node name="CrysBush43" parent="CrystalBushes" unique_id=576908316 instance=ExtResource("9_rejs0")]
+position = Vector2(-208, -270)
+rotation = 3.1415927
+
+[node name="CrysBush44" parent="CrystalBushes" unique_id=1860861199 instance=ExtResource("9_rejs0")]
+position = Vector2(-124, -270)
+rotation = 3.1415927
+
+[node name="CrysBush45" parent="CrystalBushes" unique_id=973558715 instance=ExtResource("9_rejs0")]
+position = Vector2(-36, -270)
+rotation = 3.1415927
+
+[node name="CrysBush46" parent="CrystalBushes" unique_id=573286990 instance=ExtResource("9_rejs0")]
+position = Vector2(51, -270)
+rotation = 3.1415927
+
+[node name="CrysBush47" parent="CrystalBushes" unique_id=1754954423 instance=ExtResource("9_rejs0")]
+position = Vector2(144, -270)
+rotation = 3.1415927
+
+[node name="CrysBush48" parent="CrystalBushes" unique_id=520512674 instance=ExtResource("9_rejs0")]
+position = Vector2(237, -270)
+rotation = 3.1415927
+
+[node name="CrysBush49" parent="CrystalBushes" unique_id=2040814572 instance=ExtResource("9_rejs0")]
+position = Vector2(333, -270)
+rotation = 3.1415927
+
+[node name="CrysBush50" parent="CrystalBushes" unique_id=1753989701 instance=ExtResource("9_rejs0")]
+position = Vector2(417, -270)
+rotation = 3.1415927
+
+[node name="CrysBush51" parent="CrystalBushes" unique_id=1323392824 instance=ExtResource("9_rejs0")]
+position = Vector2(505, -270)
+rotation = 3.1415927
+
+[node name="CrysBush52" parent="CrystalBushes" unique_id=1179648126 instance=ExtResource("9_rejs0")]
+position = Vector2(592, -270)
+rotation = 3.1415927
+
+[node name="CrysBush53" parent="CrystalBushes" unique_id=1622511940 instance=ExtResource("9_rejs0")]
+position = Vector2(675, -270)
+rotation = 3.1415927
+
+[node name="CrysBush54" parent="CrystalBushes" unique_id=1964202636 instance=ExtResource("9_rejs0")]
+position = Vector2(768, -270)
+rotation = 3.1415927
+
+[node name="CrysBush55" parent="CrystalBushes" unique_id=1649050500 instance=ExtResource("9_rejs0")]
+position = Vector2(864, -270)
+rotation = 3.1415927
+
+[node name="CrysBush56" parent="CrystalBushes" unique_id=2048217094 instance=ExtResource("9_rejs0")]
+position = Vector2(948, -270)
+rotation = 3.1415927
+
+[node name="CrysBush57" parent="CrystalBushes" unique_id=1036548782 instance=ExtResource("9_rejs0")]
+position = Vector2(1036, -270)
+rotation = 3.1415927
+
+[node name="CrysBush58" parent="CrystalBushes" unique_id=1238558756 instance=ExtResource("9_rejs0")]
+position = Vector2(1123, -270)
+rotation = 3.1415927
+
+[node name="CrysBush59" parent="CrystalBushes" unique_id=920819729 instance=ExtResource("9_rejs0")]
+position = Vector2(1218, -270)
+rotation = 3.1415927
+
+[node name="CrysBush60" parent="CrystalBushes" unique_id=1177661030 instance=ExtResource("9_rejs0")]
+position = Vector2(1305, -270)
+rotation = 3.1415927
+
+[node name="CrysBush61" parent="CrystalBushes" unique_id=821431154 instance=ExtResource("9_rejs0")]
+position = Vector2(1398, -270)
+rotation = 3.1415927
+
+[node name="CrysBush62" parent="CrystalBushes" unique_id=1015739473 instance=ExtResource("9_rejs0")]
+position = Vector2(1491, -270)
+rotation = 3.1415927
+
+[node name="CrysBush63" parent="CrystalBushes" unique_id=887962324 instance=ExtResource("9_rejs0")]
+position = Vector2(1587, -270)
+rotation = 3.1415927
+
+[node name="CrysBush64" parent="CrystalBushes" unique_id=1276030849 instance=ExtResource("9_rejs0")]
+position = Vector2(1671, -270)
+rotation = 3.1415927
+
+[node name="CrysBush275" parent="CrystalBushes" unique_id=1488710244 instance=ExtResource("9_rejs0")]
+position = Vector2(1575, -540)
+rotation = 3.1415927
+
+[node name="CrysBush276" parent="CrystalBushes" unique_id=1964115249 instance=ExtResource("9_rejs0")]
+position = Vector2(1666, -540)
+rotation = 3.1415927
+
+[node name="CrysBush65" parent="CrystalBushes" unique_id=2005016548 instance=ExtResource("9_rejs0")]
+position = Vector2(1759, -270)
+rotation = 3.1415927
+
+[node name="CrysBush66" parent="CrystalBushes" unique_id=1918889014 instance=ExtResource("9_rejs0")]
+position = Vector2(1846, -270)
+rotation = 3.1415927
+
+[node name="CrysBush67" parent="CrystalBushes" unique_id=1426852763 instance=ExtResource("9_rejs0")]
+position = Vector2(1929, -270)
+rotation = 3.1415927
+
+[node name="CrysBush68" parent="CrystalBushes" unique_id=151043870 instance=ExtResource("9_rejs0")]
+position = Vector2(2022, -270)
+rotation = 3.1415927
+
+[node name="CrysBush69" parent="CrystalBushes" unique_id=1851299690 instance=ExtResource("9_rejs0")]
+position = Vector2(2118, -270)
+rotation = 3.1415927
+
+[node name="CrysBush70" parent="CrystalBushes" unique_id=193799875 instance=ExtResource("9_rejs0")]
+position = Vector2(2202, -270)
+rotation = 3.1415927
+
+[node name="CrysBush71" parent="CrystalBushes" unique_id=1490444570 instance=ExtResource("9_rejs0")]
+position = Vector2(2290, -270)
+rotation = 3.1415927
+
+[node name="CrysBush72" parent="CrystalBushes" unique_id=964179216 instance=ExtResource("9_rejs0")]
+position = Vector2(2377, -270)
+rotation = 3.1415927
+
+[node name="CrysBush73" parent="CrystalBushes" unique_id=1875644142 instance=ExtResource("9_rejs0")]
+position = Vector2(2476, -270)
+rotation = 3.1415927
+
+[node name="CrysBush74" parent="CrystalBushes" unique_id=2145072927 instance=ExtResource("9_rejs0")]
+position = Vector2(2559, -270)
+rotation = 3.1415927
+
+[node name="CrysBush75" parent="CrystalBushes" unique_id=1277670100 instance=ExtResource("9_rejs0")]
+position = Vector2(2652, -270)
+rotation = 3.1415927
+
+[node name="CrysBush76" parent="CrystalBushes" unique_id=1686885324 instance=ExtResource("9_rejs0")]
+position = Vector2(2748, -270)
+rotation = 3.1415927
+
+[node name="CrysBush77" parent="CrystalBushes" unique_id=1373901994 instance=ExtResource("9_rejs0")]
+position = Vector2(2832, -270)
+rotation = 3.1415927
+
+[node name="CrysBush78" parent="CrystalBushes" unique_id=780345905 instance=ExtResource("9_rejs0")]
+position = Vector2(2920, -270)
+rotation = 3.1415927
+
+[node name="CrysBush79" parent="CrystalBushes" unique_id=1771802826 instance=ExtResource("9_rejs0")]
+position = Vector2(3007, -270)
+rotation = 3.1415927
+
+[node name="CrysBush87" parent="CrystalBushes" unique_id=201399997 instance=ExtResource("9_rejs0")]
+position = Vector2(-1020, -90)
+rotation = 3.1415927
+
+[node name="CrysBush88" parent="CrystalBushes" unique_id=1602978330 instance=ExtResource("9_rejs0")]
+position = Vector2(-936, -90)
+rotation = 3.1415927
+
+[node name="CrysBush89" parent="CrystalBushes" unique_id=1148078800 instance=ExtResource("9_rejs0")]
+position = Vector2(-848, -90)
+rotation = 3.1415927
+
+[node name="CrysBush90" parent="CrystalBushes" unique_id=2021679043 instance=ExtResource("9_rejs0")]
+position = Vector2(-761, -90)
+rotation = 3.1415927
+
+[node name="CrysBush91" parent="CrystalBushes" unique_id=2018267707 instance=ExtResource("9_rejs0")]
+position = Vector2(-666, -90)
+rotation = 3.1415927
+
+[node name="CrysBush92" parent="CrystalBushes" unique_id=1821824304 instance=ExtResource("9_rejs0")]
+position = Vector2(-573, -90)
+rotation = 3.1415927
+
+[node name="CrysBush93" parent="CrystalBushes" unique_id=1815547768 instance=ExtResource("9_rejs0")]
+position = Vector2(-477, -90)
+rotation = 3.1415927
+
+[node name="CrysBush94" parent="CrystalBushes" unique_id=1207950385 instance=ExtResource("9_rejs0")]
+position = Vector2(-393, -90)
+rotation = 3.1415927
+
+[node name="CrysBush95" parent="CrystalBushes" unique_id=1643854127 instance=ExtResource("9_rejs0")]
+position = Vector2(-305, -90)
+rotation = 3.1415927
+
+[node name="CrysBush96" parent="CrystalBushes" unique_id=1128253842 instance=ExtResource("9_rejs0")]
+position = Vector2(-218, -90)
+rotation = 3.1415927
+
+[node name="CrysBush97" parent="CrystalBushes" unique_id=1365524326 instance=ExtResource("9_rejs0")]
+position = Vector2(-123, -90)
+rotation = 3.1415927
+
+[node name="CrysBush98" parent="CrystalBushes" unique_id=2071605475 instance=ExtResource("9_rejs0")]
+position = Vector2(-30, -90)
+rotation = 3.1415927
+
+[node name="CrysBush99" parent="CrystalBushes" unique_id=1045463001 instance=ExtResource("9_rejs0")]
+position = Vector2(66, -90)
+rotation = 3.1415927
+
+[node name="CrysBush100" parent="CrystalBushes" unique_id=1486165360 instance=ExtResource("9_rejs0")]
+position = Vector2(150, -90)
+rotation = 3.1415927
+
+[node name="CrysBush101" parent="CrystalBushes" unique_id=1956439996 instance=ExtResource("9_rejs0")]
+position = Vector2(238, -90)
+rotation = 3.1415927
+
+[node name="CrysBush102" parent="CrystalBushes" unique_id=2119403346 instance=ExtResource("9_rejs0")]
+position = Vector2(325, -90)
+rotation = 3.1415927
+
+[node name="CrysBush103" parent="CrystalBushes" unique_id=1689665003 instance=ExtResource("9_rejs0")]
+position = Vector2(418, -90)
+rotation = 3.1415927
+
+[node name="CrysBush104" parent="CrystalBushes" unique_id=608107229 instance=ExtResource("9_rejs0")]
+position = Vector2(511, -90)
+rotation = 3.1415927
+
+[node name="CrysBush105" parent="CrystalBushes" unique_id=1326129241 instance=ExtResource("9_rejs0")]
+position = Vector2(607, -90)
+rotation = 3.1415927
+
+[node name="CrysBush106" parent="CrystalBushes" unique_id=1519259428 instance=ExtResource("9_rejs0")]
+position = Vector2(691, -90)
+rotation = 3.1415927
+
+[node name="CrysBush107" parent="CrystalBushes" unique_id=2006618678 instance=ExtResource("9_rejs0")]
+position = Vector2(779, -90)
+rotation = 3.1415927
+
+[node name="CrysBush108" parent="CrystalBushes" unique_id=417131780 instance=ExtResource("9_rejs0")]
+position = Vector2(866, -90)
+rotation = 3.1415927
+
+[node name="CrysBush109" parent="CrystalBushes" unique_id=1848677594 instance=ExtResource("9_rejs0")]
+position = Vector2(949, -90)
+rotation = 3.1415927
+
+[node name="CrysBush110" parent="CrystalBushes" unique_id=754783559 instance=ExtResource("9_rejs0")]
+position = Vector2(1042, -90)
+rotation = 3.1415927
+
+[node name="CrysBush111" parent="CrystalBushes" unique_id=717857290 instance=ExtResource("9_rejs0")]
+position = Vector2(1138, -90)
+rotation = 3.1415927
+
+[node name="CrysBush112" parent="CrystalBushes" unique_id=354918528 instance=ExtResource("9_rejs0")]
+position = Vector2(1222, -90)
+rotation = 3.1415927
+
+[node name="CrysBush113" parent="CrystalBushes" unique_id=1483514546 instance=ExtResource("9_rejs0")]
+position = Vector2(1310, -90)
+rotation = 3.1415927
+
+[node name="CrysBush114" parent="CrystalBushes" unique_id=1843176800 instance=ExtResource("9_rejs0")]
+position = Vector2(1397, -90)
+rotation = 3.1415927
+
+[node name="CrysBush115" parent="CrystalBushes" unique_id=1367779302 instance=ExtResource("9_rejs0")]
+position = Vector2(1492, -90)
+rotation = 3.1415927
+
+[node name="CrysBush116" parent="CrystalBushes" unique_id=252557317 instance=ExtResource("9_rejs0")]
+position = Vector2(1579, -90)
+rotation = 3.1415927
+
+[node name="CrysBush117" parent="CrystalBushes" unique_id=1478356077 instance=ExtResource("9_rejs0")]
+position = Vector2(1672, -90)
+rotation = 3.1415927
+
+[node name="CrysBush118" parent="CrystalBushes" unique_id=372472868 instance=ExtResource("9_rejs0")]
+position = Vector2(1765, -90)
+rotation = 3.1415927
+
+[node name="CrysBush119" parent="CrystalBushes" unique_id=730842842 instance=ExtResource("9_rejs0")]
+position = Vector2(1861, -90)
+rotation = 3.1415927
+
+[node name="CrysBush120" parent="CrystalBushes" unique_id=704276543 instance=ExtResource("9_rejs0")]
+position = Vector2(1945, -90)
+rotation = 3.1415927
+
+[node name="CrysBush121" parent="CrystalBushes" unique_id=1426725920 instance=ExtResource("9_rejs0")]
+position = Vector2(2033, -90)
+rotation = 3.1415927
+
+[node name="CrysBush122" parent="CrystalBushes" unique_id=741092955 instance=ExtResource("9_rejs0")]
+position = Vector2(2120, -90)
+rotation = 3.1415927
+
+[node name="CrysBush123" parent="CrystalBushes" unique_id=1011072755 instance=ExtResource("9_rejs0")]
+position = Vector2(2203, -90)
+rotation = 3.1415927
+
+[node name="CrysBush124" parent="CrystalBushes" unique_id=355482486 instance=ExtResource("9_rejs0")]
+position = Vector2(2296, -90)
+rotation = 3.1415927
+
+[node name="CrysBush125" parent="CrystalBushes" unique_id=985130672 instance=ExtResource("9_rejs0")]
+position = Vector2(2392, -90)
+rotation = 3.1415927
+
+[node name="CrysBush126" parent="CrystalBushes" unique_id=798293698 instance=ExtResource("9_rejs0")]
+position = Vector2(2476, -90)
+rotation = 3.1415927
+
+[node name="CrysBush127" parent="CrystalBushes" unique_id=97813053 instance=ExtResource("9_rejs0")]
+position = Vector2(2564, -90)
+rotation = 3.1415927
+
+[node name="CrysBush128" parent="CrystalBushes" unique_id=6332037 instance=ExtResource("9_rejs0")]
+position = Vector2(2651, -90)
+rotation = 3.1415927
+
+[node name="CrysBush129" parent="CrystalBushes" unique_id=1310688965 instance=ExtResource("9_rejs0")]
+position = Vector2(2750, -90)
+rotation = 3.1415927
+
+[node name="CrysBush130" parent="CrystalBushes" unique_id=1872256725 instance=ExtResource("9_rejs0")]
+position = Vector2(2833, -90)
+rotation = 3.1415927
+
+[node name="CrysBush131" parent="CrystalBushes" unique_id=1082553752 instance=ExtResource("9_rejs0")]
+position = Vector2(2926, -90)
+rotation = 3.1415927
+
+[node name="CrysBush132" parent="CrystalBushes" unique_id=559078297 instance=ExtResource("9_rejs0")]
+position = Vector2(3022, -90)
+rotation = 3.1415927
+
+[node name="CrysBush133" parent="CrystalBushes" unique_id=1534931074 instance=ExtResource("9_rejs0")]
+position = Vector2(3106, -90)
+rotation = 3.1415927
+
+[node name="CrysBush134" parent="CrystalBushes" unique_id=887452538 instance=ExtResource("9_rejs0")]
+position = Vector2(3194, -90)
+rotation = 3.1415927
+
+[node name="CrysBush135" parent="CrystalBushes" unique_id=672105622 instance=ExtResource("9_rejs0")]
+position = Vector2(3281, -90)
+rotation = 3.1415927
+
+[node name="CrysBush147" parent="CrystalBushes" unique_id=2102183315 instance=ExtResource("9_rejs0")]
+position = Vector2(-1035, 1350)
+
+[node name="CrysBush196" parent="CrystalBushes" unique_id=915619756 instance=ExtResource("9_rejs0")]
+position = Vector2(-1127, 1350)
+
+[node name="CrysBush197" parent="CrystalBushes" unique_id=1564655785 instance=ExtResource("9_rejs0")]
+position = Vector2(-1213, 1350)
+
+[node name="CrysBush198" parent="CrystalBushes" unique_id=1161078389 instance=ExtResource("9_rejs0")]
+position = Vector2(-1304, 1350)
+
+[node name="CrysBush199" parent="CrystalBushes" unique_id=1361322695 instance=ExtResource("9_rejs0")]
+position = Vector2(-1396, 1350)
+
+[node name="CrysBush200" parent="CrystalBushes" unique_id=1471872585 instance=ExtResource("9_rejs0")]
+position = Vector2(-1483, 1350)
+
+[node name="CrysBush201" parent="CrystalBushes" unique_id=83664655 instance=ExtResource("9_rejs0")]
+position = Vector2(-1578, 1350)
+
+[node name="CrysBush202" parent="CrystalBushes" unique_id=615552135 instance=ExtResource("9_rejs0")]
+position = Vector2(-1663, 1350)
+
+[node name="CrysBush203" parent="CrystalBushes" unique_id=1769272978 instance=ExtResource("9_rejs0")]
+position = Vector2(-1753, 1350)
+
+[node name="CrysBush204" parent="CrystalBushes" unique_id=962052296 instance=ExtResource("9_rejs0")]
+position = Vector2(-1845, 1350)
+
+[node name="CrysBush148" parent="CrystalBushes" unique_id=1031651383 instance=ExtResource("9_rejs0")]
+position = Vector2(-945, 1350)
+
+[node name="CrysBush149" parent="CrystalBushes" unique_id=1077304884 instance=ExtResource("9_rejs0")]
+position = Vector2(-857, 1350)
+
+[node name="CrysBush150" parent="CrystalBushes" unique_id=1368083157 instance=ExtResource("9_rejs0")]
+position = Vector2(-766, 1350)
+
+[node name="CrysBush151" parent="CrystalBushes" unique_id=1367840327 instance=ExtResource("9_rejs0")]
+position = Vector2(-679, 1350)
+
+[node name="CrysBush152" parent="CrystalBushes" unique_id=1159390409 instance=ExtResource("9_rejs0")]
+position = Vector2(-587, 1350)
+
+[node name="CrysBush153" parent="CrystalBushes" unique_id=393600154 instance=ExtResource("9_rejs0")]
+position = Vector2(-497, 1350)
+
+[node name="CrysBush154" parent="CrystalBushes" unique_id=1930435889 instance=ExtResource("9_rejs0")]
+position = Vector2(-406, 1350)
+
+[node name="CrysBush155" parent="CrystalBushes" unique_id=1385639259 instance=ExtResource("9_rejs0")]
+position = Vector2(-317, 1350)
+
+[node name="CrysBush156" parent="CrystalBushes" unique_id=585948674 instance=ExtResource("9_rejs0")]
+position = Vector2(-224, 1350)
+
+[node name="CrysBush157" parent="CrystalBushes" unique_id=1599118976 instance=ExtResource("9_rejs0")]
+position = Vector2(-133, 1350)
+
+[node name="CrysBush158" parent="CrystalBushes" unique_id=1300025535 instance=ExtResource("9_rejs0")]
+position = Vector2(-46, 1350)
+
+[node name="CrysBush159" parent="CrystalBushes" unique_id=321963204 instance=ExtResource("9_rejs0")]
+position = Vector2(46, 1350)
+
+[node name="CrysBush160" parent="CrystalBushes" unique_id=482250460 instance=ExtResource("9_rejs0")]
+position = Vector2(135, 1350)
+
+[node name="CrysBush161" parent="CrystalBushes" unique_id=88997604 instance=ExtResource("9_rejs0")]
+position = Vector2(226, 1350)
+
+[node name="CrysBush162" parent="CrystalBushes" unique_id=733220226 instance=ExtResource("9_rejs0")]
+position = Vector2(318, 1350)
+
+[node name="CrysBush163" parent="CrystalBushes" unique_id=1985302886 instance=ExtResource("9_rejs0")]
+position = Vector2(408, 1350)
+
+[node name="CrysBush164" parent="CrystalBushes" unique_id=272393944 instance=ExtResource("9_rejs0")]
+position = Vector2(491, 1350)
+
+[node name="CrysBush165" parent="CrystalBushes" unique_id=1225776819 instance=ExtResource("9_rejs0")]
+position = Vector2(586, 1350)
+
+[node name="CrysBush166" parent="CrystalBushes" unique_id=1257158161 instance=ExtResource("9_rejs0")]
+position = Vector2(675, 1350)
+
+[node name="CrysBush167" parent="CrystalBushes" unique_id=804541006 instance=ExtResource("9_rejs0")]
+position = Vector2(765, 1350)
+
+[node name="CrysBush168" parent="CrystalBushes" unique_id=951658043 instance=ExtResource("9_rejs0")]
+position = Vector2(852, 1350)
+
+[node name="CrysBush169" parent="CrystalBushes" unique_id=984749995 instance=ExtResource("9_rejs0")]
+position = Vector2(945, 1350)
+
+[node name="CrysBush170" parent="CrystalBushes" unique_id=1726885369 instance=ExtResource("9_rejs0")]
+position = Vector2(1034, 1350)
+
+[node name="CrysBush171" parent="CrystalBushes" unique_id=357888711 instance=ExtResource("9_rejs0")]
+position = Vector2(1126, 1350)
+
+[node name="CrysBush172" parent="CrystalBushes" unique_id=1686186550 instance=ExtResource("9_rejs0")]
+position = Vector2(1216, 1350)
+
+[node name="CrysBush173" parent="CrystalBushes" unique_id=2118071544 instance=ExtResource("9_rejs0")]
+position = Vector2(1306, 1350)
+
+[node name="CrysBush174" parent="CrystalBushes" unique_id=2042745724 instance=ExtResource("9_rejs0")]
+position = Vector2(1390, 1350)
+
+[node name="CrysBush175" parent="CrystalBushes" unique_id=1160283228 instance=ExtResource("9_rejs0")]
+position = Vector2(1484, 1350)
+
+[node name="CrysBush176" parent="CrystalBushes" unique_id=1626668888 instance=ExtResource("9_rejs0")]
+position = Vector2(1577, 1350)
+
+[node name="CrysBush177" parent="CrystalBushes" unique_id=938478096 instance=ExtResource("9_rejs0")]
+position = Vector2(1667, 1350)
+
+[node name="CrysBush178" parent="CrystalBushes" unique_id=1831420198 instance=ExtResource("9_rejs0")]
+position = Vector2(1755, 1350)
+
+[node name="CrysBush179" parent="CrystalBushes" unique_id=738430082 instance=ExtResource("9_rejs0")]
+position = Vector2(1844, 1350)
+
+[node name="CrysBush180" parent="CrystalBushes" unique_id=266242061 instance=ExtResource("9_rejs0")]
+position = Vector2(1934, 1350)
+
+[node name="CrysBush181" parent="CrystalBushes" unique_id=110343099 instance=ExtResource("9_rejs0")]
+position = Vector2(2026, 1350)
+
+[node name="CrysBush182" parent="CrystalBushes" unique_id=1987067675 instance=ExtResource("9_rejs0")]
+position = Vector2(2115, 1350)
+
+[node name="CrysBush183" parent="CrystalBushes" unique_id=1878339849 instance=ExtResource("9_rejs0")]
+position = Vector2(2204, 1350)
+
+[node name="CrysBush184" parent="CrystalBushes" unique_id=1327774590 instance=ExtResource("9_rejs0")]
+position = Vector2(2297, 1350)
+
+[node name="CrysBush185" parent="CrystalBushes" unique_id=772926707 instance=ExtResource("9_rejs0")]
+position = Vector2(2379, 1350)
+
+[node name="CrysBush186" parent="CrystalBushes" unique_id=1797557121 instance=ExtResource("9_rejs0")]
+position = Vector2(2477, 1350)
+
+[node name="CrysBush187" parent="CrystalBushes" unique_id=992399783 instance=ExtResource("9_rejs0")]
+position = Vector2(2565, 1350)
+
+[node name="CrysBush188" parent="CrystalBushes" unique_id=1056802376 instance=ExtResource("9_rejs0")]
+position = Vector2(2652, 1350)
+
+[node name="CrysBush189" parent="CrystalBushes" unique_id=291685565 instance=ExtResource("9_rejs0")]
+position = Vector2(2751, 1350)
+
+[node name="CrysBush190" parent="CrystalBushes" unique_id=171780741 instance=ExtResource("9_rejs0")]
+position = Vector2(2834, 1350)
+
+[node name="CrysBush191" parent="CrystalBushes" unique_id=453862745 instance=ExtResource("9_rejs0")]
+position = Vector2(2927, 1350)
+
+[node name="CrysBush192" parent="CrystalBushes" unique_id=1352534185 instance=ExtResource("9_rejs0")]
+position = Vector2(3023, 1350)
+
+[node name="CrysBush193" parent="CrystalBushes" unique_id=336891499 instance=ExtResource("9_rejs0")]
+position = Vector2(3107, 1350)
+
+[node name="CrysBush194" parent="CrystalBushes" unique_id=535078634 instance=ExtResource("9_rejs0")]
+position = Vector2(3195, 1350)
+
+[node name="CrysBush195" parent="CrystalBushes" unique_id=2111734777 instance=ExtResource("9_rejs0")]
+position = Vector2(3282, 1350)
+
+[node name="CrysBush80" parent="CrystalBushes" unique_id=997477125 instance=ExtResource("9_rejs0")]
+position = Vector2(1753, 990)
+rotation = 3.1415927
+
+[node name="CrysBush81" parent="CrystalBushes" unique_id=1794798948 instance=ExtResource("9_rejs0")]
+position = Vector2(1667, 990)
+rotation = 3.1415927
+
+[node name="CrysBush82" parent="CrystalBushes" unique_id=1816249847 instance=ExtResource("9_rejs0")]
+position = Vector2(1035, 810)
+rotation = 3.1415927
+
+[node name="CrysBush83" parent="CrystalBushes" unique_id=1528160407 instance=ExtResource("9_rejs0")]
+position = Vector2(496, 630)
+rotation = 3.1415927
+
+[node name="CrysBush84" parent="CrystalBushes" unique_id=1472656191 instance=ExtResource("9_rejs0")]
+position = Vector2(-45, 450)
+rotation = 3.1415927
+
+[node name="CrysBush85" parent="CrystalBushes" unique_id=488973148 instance=ExtResource("9_rejs0")]
+position = Vector2(-585, 270)
+rotation = 3.1415927
+
+[node name="CrysBush86" parent="CrystalBushes" unique_id=646674467 instance=ExtResource("9_rejs0")]
+position = Vector2(-1125, 90)
+rotation = 3.1415927
+
+[node name="CrysBush136" parent="CrystalBushes" unique_id=351020985 instance=ExtResource("9_rejs0")]
+position = Vector2(2294, 900)
+rotation = 3.1415927
+
+[node name="CrysBush137" parent="CrystalBushes" unique_id=2141121048 instance=ExtResource("9_rejs0")]
+position = Vector2(2385, 900)
+rotation = 3.1415927
+
+[node name="CrysBush138" parent="CrystalBushes" unique_id=1893815710 instance=ExtResource("9_rejs0")]
+position = Vector2(2478, 900)
+rotation = 3.1415927
+
+[node name="CrysBush139" parent="CrystalBushes" unique_id=783203444 instance=ExtResource("9_rejs0")]
+position = Vector2(2743, 900)
+rotation = 3.1415927
+
+[node name="CrysBush140" parent="CrystalBushes" unique_id=1802277218 instance=ExtResource("9_rejs0")]
+position = Vector2(2923, 900)
+rotation = 3.1415927
+
+[node name="CrysBush141" parent="CrystalBushes" unique_id=1353067888 instance=ExtResource("9_rejs0")]
+position = Vector2(3107, 900)
+rotation = 3.1415927
+
+[node name="CrysBush142" parent="CrystalBushes" unique_id=2042823395 instance=ExtResource("9_rejs0")]
+position = Vector2(3104, 810)
+
+[node name="CrysBush143" parent="CrystalBushes" unique_id=605522876 instance=ExtResource("9_rejs0")]
+position = Vector2(2829, 810)
+
+[node name="CrysBush144" parent="CrystalBushes" unique_id=1461680763 instance=ExtResource("9_rejs0")]
+position = Vector2(2654, 810)
+
+[node name="CrysBush145" parent="CrystalBushes" unique_id=566344453 instance=ExtResource("9_rejs0")]
+position = Vector2(2561, 810)
+
+[node name="CrysBush146" parent="CrystalBushes" unique_id=426233130 instance=ExtResource("9_rejs0")]
+position = Vector2(2378, 810)
+
+[node name="CrysBush205" parent="CrystalBushes" unique_id=1194282576 instance=ExtResource("9_rejs0")]
+position = Vector2(3194, -900)
+
+[node name="CrysBush227" parent="CrystalBushes" unique_id=358438072 instance=ExtResource("9_rejs0")]
+position = Vector2(2925, -360)
+
+[node name="CrysBush228" parent="CrystalBushes" unique_id=1174054821 instance=ExtResource("9_rejs0")]
+position = Vector2(3014, -360)
+
+[node name="CrysBush229" parent="CrystalBushes" unique_id=1567927791 instance=ExtResource("9_rejs0")]
+position = Vector2(3104, -360)
+
+[node name="CrysBush230" parent="CrystalBushes" unique_id=1630916697 instance=ExtResource("9_rejs0")]
+position = Vector2(2568, -360)
+
+[node name="CrysBush231" parent="CrystalBushes" unique_id=1360508606 instance=ExtResource("9_rejs0")]
+position = Vector2(2657, -360)
+
+[node name="CrysBush232" parent="CrystalBushes" unique_id=970766776 instance=ExtResource("9_rejs0")]
+position = Vector2(2747, -360)
+
+[node name="CrysBush233" parent="CrystalBushes" unique_id=1744495545 instance=ExtResource("9_rejs0")]
+position = Vector2(2207, -360)
+
+[node name="CrysBush265" parent="CrystalBushes" unique_id=301535350 instance=ExtResource("9_rejs0")]
+position = Vector2(2022, -360)
+
+[node name="CrysBush266" parent="CrystalBushes" unique_id=237221180 instance=ExtResource("9_rejs0")]
+position = Vector2(1841, -360)
+
+[node name="CrysBush267" parent="CrystalBushes" unique_id=1164940652 instance=ExtResource("9_rejs0")]
+position = Vector2(1753, -360)
+
+[node name="CrysBush268" parent="CrystalBushes" unique_id=183708699 instance=ExtResource("9_rejs0")]
+position = Vector2(1488, -360)
+
+[node name="CrysBush269" parent="CrystalBushes" unique_id=1014372335 instance=ExtResource("9_rejs0")]
+position = Vector2(1394, -360)
+
+[node name="CrysBush270" parent="CrystalBushes" unique_id=294568126 instance=ExtResource("9_rejs0")]
+position = Vector2(1309, -360)
+
+[node name="CrysBush271" parent="CrystalBushes" unique_id=330303344 instance=ExtResource("9_rejs0")]
+position = Vector2(1126, -360)
+
+[node name="CrysBush272" parent="CrystalBushes" unique_id=2125367522 instance=ExtResource("9_rejs0")]
+position = Vector2(946, -360)
+
+[node name="CrysBush273" parent="CrystalBushes" unique_id=126906208 instance=ExtResource("9_rejs0")]
+position = Vector2(770, -360)
+
+[node name="CrysBush274" parent="CrystalBushes" unique_id=517822550 instance=ExtResource("9_rejs0")]
+position = Vector2(673, -360)
+
+[node name="CrysBush277" parent="CrystalBushes" unique_id=540490386 instance=ExtResource("9_rejs0")]
+position = Vector2(496, -360)
+
+[node name="CrysBush278" parent="CrystalBushes" unique_id=375190498 instance=ExtResource("9_rejs0")]
+position = Vector2(405, -360)
+
+[node name="CrysBush279" parent="CrystalBushes" unique_id=309185924 instance=ExtResource("9_rejs0")]
+position = Vector2(315, -360)
+
+[node name="CrysBush280" parent="CrystalBushes" unique_id=583295869 instance=ExtResource("9_rejs0")]
+position = Vector2(224, -360)
+
+[node name="CrysBush281" parent="CrystalBushes" unique_id=792301048 instance=ExtResource("9_rejs0")]
+position = Vector2(137, -360)
+
+[node name="CrysBush282" parent="CrystalBushes" unique_id=1817354257 instance=ExtResource("9_rejs0")]
+position = Vector2(46, -360)
+
+[node name="CrysBush283" parent="CrystalBushes" unique_id=1471613455 instance=ExtResource("9_rejs0")]
+position = Vector2(-45, -360)
+
+[node name="CrysBush284" parent="CrystalBushes" unique_id=1861966224 instance=ExtResource("9_rejs0")]
+position = Vector2(-136, -360)
+
+[node name="CrysBush285" parent="CrystalBushes" unique_id=1240104310 instance=ExtResource("9_rejs0")]
+position = Vector2(-229, -360)
+
+[node name="CrysBush286" parent="CrystalBushes" unique_id=828332332 instance=ExtResource("9_rejs0")]
+position = Vector2(-320, -360)
+
+[node name="CrysBush306" parent="CrystalBushes" unique_id=1003055234 instance=ExtResource("9_rejs0")]
+position = Vector2(-498, -540)
+
+[node name="CrysBush287" parent="CrystalBushes" unique_id=34681092 instance=ExtResource("9_rejs0")]
+position = Vector2(-406, -360)
+
+[node name="CrysBush305" parent="CrystalBushes" unique_id=1075596791 instance=ExtResource("9_rejs0")]
+position = Vector2(-222, -540)
+
+[node name="CrysBush288" parent="CrystalBushes" unique_id=491019451 instance=ExtResource("9_rejs0")]
+position = Vector2(-497, -360)
+
+[node name="CrysBush289" parent="CrystalBushes" unique_id=807614521 instance=ExtResource("9_rejs0")]
+position = Vector2(-580, -360)
+
+[node name="CrysBush290" parent="CrystalBushes" unique_id=1926050203 instance=ExtResource("9_rejs0")]
+position = Vector2(-671, -360)
+
+[node name="CrysBush291" parent="CrystalBushes" unique_id=2121345560 instance=ExtResource("9_rejs0")]
+position = Vector2(-765, -360)
+
+[node name="CrysBush292" parent="CrystalBushes" unique_id=290613731 instance=ExtResource("9_rejs0")]
+position = Vector2(-856, -360)
+
+[node name="CrysBush293" parent="CrystalBushes" unique_id=1282477199 instance=ExtResource("9_rejs0")]
+position = Vector2(-939, -360)
+
+[node name="CrysBush294" parent="CrystalBushes" unique_id=1460000676 instance=ExtResource("9_rejs0")]
+position = Vector2(-1030, -360)
+
+[node name="CrysBush295" parent="CrystalBushes" unique_id=533415330 instance=ExtResource("9_rejs0")]
+position = Vector2(-1124, -360)
+
+[node name="CrysBush296" parent="CrystalBushes" unique_id=5538592 instance=ExtResource("9_rejs0")]
+position = Vector2(-1215, -360)
+
+[node name="CrysBush304" parent="CrystalBushes" unique_id=572724809 instance=ExtResource("9_rejs0")]
+position = Vector2(-1215, -540)
+
+[node name="CrysBush297" parent="CrystalBushes" unique_id=1309846847 instance=ExtResource("9_rejs0")]
+position = Vector2(-1298, -360)
+
+[node name="CrysBush298" parent="CrystalBushes" unique_id=2010630417 instance=ExtResource("9_rejs0")]
+position = Vector2(-1389, -360)
+
+[node name="CrysBush299" parent="CrystalBushes" unique_id=1864101532 instance=ExtResource("9_rejs0")]
+position = Vector2(-1488, -360)
+
+[node name="CrysBush300" parent="CrystalBushes" unique_id=1212955910 instance=ExtResource("9_rejs0")]
+position = Vector2(-1579, -360)
+
+[node name="CrysBush301" parent="CrystalBushes" unique_id=2087125649 instance=ExtResource("9_rejs0")]
+position = Vector2(-2564, -360)
+
+[node name="CrysBush307" parent="CrystalBushes" unique_id=1584483126 instance=ExtResource("9_rejs0")]
+position = Vector2(-2479, -900)
+
+[node name="CrysBush32" parent="CrystalBushes" unique_id=1780301276 instance=ExtResource("9_rejs0")]
+position = Vector2(-2202, -1080)
+rotation = 3.1415927
+
+[node name="CrysBush308" parent="CrystalBushes" unique_id=1301964673 instance=ExtResource("9_rejs0")]
+position = Vector2(-2295, -900)
+
+[node name="CrysBush302" parent="CrystalBushes" unique_id=72817960 instance=ExtResource("9_rejs0")]
+position = Vector2(-2656, -360)
+
+[node name="CrysBush303" parent="CrystalBushes" unique_id=577182024 instance=ExtResource("9_rejs0")]
+position = Vector2(-2744, -360)
+
+[node name="CrysBush234" parent="CrystalBushes" unique_id=619684345 instance=ExtResource("9_rejs0")]
+position = Vector2(2296, -360)
+
+[node name="CrysBush235" parent="CrystalBushes" unique_id=827682817 instance=ExtResource("9_rejs0")]
+position = Vector2(2386, -360)
+
+[node name="CrysBush236" parent="CrystalBushes" unique_id=1289397221 instance=ExtResource("9_rejs0")]
+position = Vector2(3102, -1080)
+rotation = 3.1415927
+
+[node name="CrysBush237" parent="CrystalBushes" unique_id=279585518 instance=ExtResource("9_rejs0")]
+position = Vector2(3191, -1080)
+rotation = 3.1415927
+
+[node name="CrysBush238" parent="CrystalBushes" unique_id=787611807 instance=ExtResource("9_rejs0")]
+position = Vector2(3281, -1080)
+rotation = 3.1415927
+
+[node name="CrysBush239" parent="CrystalBushes" unique_id=1981085557 instance=ExtResource("9_rejs0")]
+position = Vector2(2745, -1080)
+rotation = 3.1415927
+
+[node name="CrysBush240" parent="CrystalBushes" unique_id=975094321 instance=ExtResource("9_rejs0")]
+position = Vector2(2834, -1080)
+rotation = 3.1415927
+
+[node name="CrysBush241" parent="CrystalBushes" unique_id=1292489145 instance=ExtResource("9_rejs0")]
+position = Vector2(2924, -1080)
+rotation = 3.1415927
+
+[node name="CrysBush242" parent="CrystalBushes" unique_id=392707689 instance=ExtResource("9_rejs0")]
+position = Vector2(2384, -1080)
+rotation = 3.1415927
+
+[node name="CrysBush243" parent="CrystalBushes" unique_id=534225973 instance=ExtResource("9_rejs0")]
+position = Vector2(2473, -1080)
+rotation = 3.1415927
+
+[node name="CrysBush244" parent="CrystalBushes" unique_id=1214329813 instance=ExtResource("9_rejs0")]
+position = Vector2(2563, -1080)
+rotation = 3.1415927
+
+[node name="CrysBush209" parent="CrystalBushes" unique_id=681016274 instance=ExtResource("9_rejs0")]
+position = Vector2(3150, -852)
+rotation = -1.5707964
+
+[node name="CrysBush210" parent="CrystalBushes" unique_id=2080208910 instance=ExtResource("9_rejs0")]
+position = Vector2(3150, -761)
+rotation = -1.5707964
+
+[node name="CrysBush211" parent="CrystalBushes" unique_id=531142569 instance=ExtResource("9_rejs0")]
+position = Vector2(3150, -673)
+rotation = -1.5707964
+
+[node name="CrysBush212" parent="CrystalBushes" unique_id=955121938 instance=ExtResource("9_rejs0")]
+position = Vector2(3150, -581)
+rotation = -1.5707964
+
+[node name="CrysBush213" parent="CrystalBushes" unique_id=1653656849 instance=ExtResource("9_rejs0")]
+position = Vector2(3150, -490)
+rotation = -1.5707964
+
+[node name="CrysBush214" parent="CrystalBushes" unique_id=745824983 instance=ExtResource("9_rejs0")]
+position = Vector2(3150, -404)
+rotation = -1.5707964
+
+[node name="CrysBush215" parent="CrystalBushes" unique_id=1679748121 instance=ExtResource("9_rejs0")]
+position = Vector2(2790, -852)
+rotation = -1.5707964
+
+[node name="CrysBush216" parent="CrystalBushes" unique_id=1981722633 instance=ExtResource("9_rejs0")]
+position = Vector2(2790, -761)
+rotation = -1.5707964
+
+[node name="CrysBush217" parent="CrystalBushes" unique_id=1847096137 instance=ExtResource("9_rejs0")]
+position = Vector2(2790, -673)
+rotation = -1.5707964
+
+[node name="CrysBush218" parent="CrystalBushes" unique_id=1258316025 instance=ExtResource("9_rejs0")]
+position = Vector2(2790, -581)
+rotation = -1.5707964
+
+[node name="CrysBush219" parent="CrystalBushes" unique_id=347669057 instance=ExtResource("9_rejs0")]
+position = Vector2(2790, -490)
+rotation = -1.5707964
+
+[node name="CrysBush220" parent="CrystalBushes" unique_id=1019963943 instance=ExtResource("9_rejs0")]
+position = Vector2(2790, -404)
+rotation = -1.5707964
+
+[node name="CrysBush221" parent="CrystalBushes" unique_id=1095351164 instance=ExtResource("9_rejs0")]
+position = Vector2(2430, -852)
+rotation = -1.5707964
+
+[node name="CrysBush222" parent="CrystalBushes" unique_id=938809339 instance=ExtResource("9_rejs0")]
+position = Vector2(2430, -761)
+rotation = -1.5707964
+
+[node name="CrysBush223" parent="CrystalBushes" unique_id=733183972 instance=ExtResource("9_rejs0")]
+position = Vector2(2430, -673)
+rotation = -1.5707964
+
+[node name="CrysBush224" parent="CrystalBushes" unique_id=319981219 instance=ExtResource("9_rejs0")]
+position = Vector2(2430, -581)
+rotation = -1.5707964
+
+[node name="CrysBush225" parent="CrystalBushes" unique_id=90559491 instance=ExtResource("9_rejs0")]
+position = Vector2(2430, -490)
+rotation = -1.5707964
+
+[node name="CrysBush226" parent="CrystalBushes" unique_id=444486358 instance=ExtResource("9_rejs0")]
+position = Vector2(2430, -404)
+rotation = -1.5707964
+
+[node name="CrysBush245" parent="CrystalBushes" unique_id=292717590 instance=ExtResource("9_rejs0")]
+position = Vector2(3240, -852)
+rotation = 1.5707964
+
+[node name="CrysBush246" parent="CrystalBushes" unique_id=1137391343 instance=ExtResource("9_rejs0")]
+position = Vector2(3240, -761)
+rotation = 1.5707964
+
+[node name="CrysBush247" parent="CrystalBushes" unique_id=853188336 instance=ExtResource("9_rejs0")]
+position = Vector2(3240, -673)
+rotation = 1.5707964
+
+[node name="CrysBush248" parent="CrystalBushes" unique_id=157123752 instance=ExtResource("9_rejs0")]
+position = Vector2(3240, -581)
+rotation = 1.5707964
+
+[node name="CrysBush249" parent="CrystalBushes" unique_id=74878251 instance=ExtResource("9_rejs0")]
+position = Vector2(3240, -490)
+rotation = 1.5707964
+
+[node name="CrysBush250" parent="CrystalBushes" unique_id=1362206826 instance=ExtResource("9_rejs0")]
+position = Vector2(3240, -404)
+rotation = 1.5707964
+
+[node name="CrysBush251" parent="CrystalBushes" unique_id=2052553990 instance=ExtResource("9_rejs0")]
+position = Vector2(2880, -852)
+rotation = 1.5707964
+
+[node name="CrysBush252" parent="CrystalBushes" unique_id=364591433 instance=ExtResource("9_rejs0")]
+position = Vector2(2880, -761)
+rotation = 1.5707964
+
+[node name="CrysBush253" parent="CrystalBushes" unique_id=202533848 instance=ExtResource("9_rejs0")]
+position = Vector2(2880, -673)
+rotation = 1.5707964
+
+[node name="CrysBush254" parent="CrystalBushes" unique_id=1916945938 instance=ExtResource("9_rejs0")]
+position = Vector2(2880, -581)
+rotation = 1.5707964
+
+[node name="CrysBush255" parent="CrystalBushes" unique_id=219630139 instance=ExtResource("9_rejs0")]
+position = Vector2(2880, -490)
+rotation = 1.5707964
+
+[node name="CrysBush256" parent="CrystalBushes" unique_id=1694944990 instance=ExtResource("9_rejs0")]
+position = Vector2(2880, -404)
+rotation = 1.5707964
+
+[node name="CrysBush257" parent="CrystalBushes" unique_id=190322466 instance=ExtResource("9_rejs0")]
+position = Vector2(2520, -852)
+rotation = 1.5707964
+
+[node name="CrysBush258" parent="CrystalBushes" unique_id=1310660061 instance=ExtResource("9_rejs0")]
+position = Vector2(2520, -761)
+rotation = 1.5707964
+
+[node name="CrysBush259" parent="CrystalBushes" unique_id=176876460 instance=ExtResource("9_rejs0")]
+position = Vector2(2520, -673)
+rotation = 1.5707964
+
+[node name="CrysBush260" parent="CrystalBushes" unique_id=944296455 instance=ExtResource("9_rejs0")]
+position = Vector2(2520, -581)
+rotation = 1.5707964
+
+[node name="CrysBush261" parent="CrystalBushes" unique_id=2049472974 instance=ExtResource("9_rejs0")]
+position = Vector2(2520, -490)
+rotation = 1.5707964
+
+[node name="CrysBush262" parent="CrystalBushes" unique_id=1686648379 instance=ExtResource("9_rejs0")]
+position = Vector2(2520, -404)
+rotation = 1.5707964
+
+[node name="CrysBush206" parent="CrystalBushes" unique_id=1395778729 instance=ExtResource("9_rejs0")]
+position = Vector2(2478, -900)
+
+[node name="CrysBush208" parent="CrystalBushes" unique_id=1836112716 instance=ExtResource("9_rejs0")]
+position = Vector2(2834, -900)
+
+[node name="CrysBush207" parent="CrystalBushes" unique_id=2117425812 instance=ExtResource("9_rejs0")]
+position = Vector2(2116, -900)
+
+[node name="CrysBush263" parent="CrystalBushes" unique_id=1556396279 instance=ExtResource("9_rejs0")]
+position = Vector2(2117, -1080)
+rotation = 3.1415927
+
+[node name="CrysBush264" parent="CrystalBushes" unique_id=1911851435 instance=ExtResource("9_rejs0")]
+position = Vector2(2205, -1080)
+rotation = 3.1415927
+
+[node name="GravFlips" type="Node" parent="." unique_id=2050405579]
+
+[node name="GravFlip" parent="GravFlips" unique_id=1742276203 instance=ExtResource("10_xhv7h")]
+position = Vector2(-2993, 1211)
+
+[node name="GravFlip2" parent="GravFlips" unique_id=366479094 instance=ExtResource("10_xhv7h")]
+position = Vector2(-2758, -158)
+
+[node name="GravFlip3" parent="GravFlips" unique_id=559788301 instance=ExtResource("10_xhv7h")]
+position = Vector2(-2201, 1305)
+
+[node name="GravFlip4" parent="GravFlips" unique_id=934872729 instance=ExtResource("10_xhv7h")]
+position = Vector2(-1757, -131)
+
+[node name="GravFlip5" parent="GravFlips" unique_id=1127066227 instance=ExtResource("10_xhv7h")]
+position = Vector2(3183, 732)
+
+[node name="GravFlip6" parent="GravFlips" unique_id=1880945432 instance=ExtResource("10_xhv7h")]
+position = Vector2(3286, -327)
+
+[node name="GravFlip7" parent="GravFlips" unique_id=1033950024 instance=ExtResource("10_xhv7h")]
+position = Vector2(3241, -973)
+
+[node name="GravFlip8" parent="GravFlips" unique_id=452687666 instance=ExtResource("10_xhv7h")]
+position = Vector2(3064, -469)
+
+[node name="GravFlip9" parent="GravFlips" unique_id=1078684336 instance=ExtResource("10_xhv7h")]
+position = Vector2(2877, -968)
+
+[node name="GravFlip10" parent="GravFlips" unique_id=1826152526 instance=ExtResource("10_xhv7h")]
+position = Vector2(2697, -494)
+
+[node name="GravFlip11" parent="GravFlips" unique_id=1929100456 instance=ExtResource("10_xhv7h")]
+position = Vector2(2522, -977)
+
+[node name="GravFlip13" parent="GravFlips" unique_id=1279686806 instance=ExtResource("10_xhv7h")]
+position = Vector2(-2658, -569)
+
+[node name="GravFlip12" parent="GravFlips" unique_id=657216508 instance=ExtResource("10_xhv7h")]
+position = Vector2(2340, -484)
+
+[node name="Label" type="Label" parent="." unique_id=1694121536]
+visible = false
+offset_left = -1733.0
+offset_top = -331.00003
+offset_right = -1070.0
+offset_bottom = -178.00003
+rotation = 0.2617994
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_w44jd")
+theme_override_font_sizes/font_size = 32
+text = "Somewhere over 
+there there's a GravFlip --->
+[hint hint]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1493557554]
+offset_left = 1542.0
+offset_top = 924.0
+offset_right = 1789.0
+offset_bottom = 975.0
+theme_override_colors/font_color = Color(0, 0.32097837, 0, 1)
+theme_override_fonts/font = ExtResource("8_w44jd")
+theme_override_font_sizes/font_size = 32
+text = "Ha Ha! Death!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Debug" type="Node" parent="." unique_id=670537471]
+process_mode = 4
+
+[node name="SoulCry3" parent="Debug" unique_id=1306090675 instance=ExtResource("5_rr5b4")]
+visible = false
+position = Vector2(-3007, -511)
+
+[node name="SoulCry5" parent="Debug" unique_id=1073013853 instance=ExtResource("5_rr5b4")]
+visible = false
+position = Vector2(-2892, -174)
+
+[node name="SoulCry4" parent="Debug" unique_id=1157121407 instance=ExtResource("5_rr5b4")]
+visible = false
+position = Vector2(-1779, -317)
+
+[node name="GravFlip4" parent="Debug" unique_id=530334486 instance=ExtResource("10_xhv7h")]
+visible = false
+position = Vector2(-1214, -225)
+
+[node name="GravFlip5" parent="Debug" unique_id=1203702778 instance=ExtResource("10_xhv7h")]
+visible = false
+position = Vector2(1644, -1028)
+
+[node name="SoulCry13" parent="Debug" unique_id=930188333 instance=ExtResource("5_rr5b4")]
+visible = false
+position = Vector2(3183, -1015)
+
+[node name="SoulCry14" parent="Debug" unique_id=853802206 instance=ExtResource("5_rr5b4")]
+visible = false
+position = Vector2(2852, -1002)
+
+[node name="SoulCry15" parent="Debug" unique_id=1628887173 instance=ExtResource("5_rr5b4")]
+visible = false
+position = Vector2(2477, -1020)
+
+[node name="SoulCry16" parent="Debug" unique_id=1192223546 instance=ExtResource("5_rr5b4")]
+visible = false
+position = Vector2(1716, -1035)
+
+[node name="Trophy" type="Sprite2D" parent="." unique_id=1018833414]
+visible = false
+position = Vector2(-3054, -959)
+texture = ExtResource("4_v6dru")
+script = ExtResource("5_l4epn")
+
+[node name="Area2D" type="Area2D" parent="Trophy" unique_id=286174610]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trophy/Area2D" unique_id=417629620]
+position = Vector2(5, -32)
+shape = SubResource("RectangleShape2D_xhv7h")
+
+[node name="Label" type="Label" parent="Trophy" unique_id=1624279059]
+visible = false
+offset_left = 402.0
+offset_top = -230.0
+offset_right = 1803.3047
+offset_bottom = 358.0
+rotation = 0.5235988
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_w44jd")
+theme_override_font_sizes/font_size = 128
+text = "You Win!
+Good Job! You didn't do a rage quit!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[connection signal="timeout" from="TextBoxes" to="TextBoxes" method="_on_timeout"]
+[connection signal="body_entered" from="Trophy/Area2D" to="Trophy" method="_trophy_body_entered"]

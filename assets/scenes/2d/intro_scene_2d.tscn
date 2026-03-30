@@ -446,6 +446,7 @@ texture = ExtResource("1_qprbw")
 [node name="Scenes" type="Node" parent="." unique_id=1695714389]
 
 [node name="Scene1" type="Node2D" parent="Scenes" unique_id=398366057]
+visible = false
 
 [node name="SceneClip" type="Sprite2D" parent="Scenes/Scene1" unique_id=1661887365]
 clip_children = 1
@@ -508,7 +509,6 @@ texture = ExtResource("5_q1uis")
 offset = Vector2(0, -300)
 
 [node name="Scene3" type="Node2D" parent="Scenes" unique_id=565865862]
-visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Scenes/Scene3" unique_id=1442686805]
 libraries/ = SubResource("AnimationLibrary_4gd7r")
@@ -543,7 +543,7 @@ texture = ExtResource("4_q1uis")
 offset = Vector2(0, 20)
 
 [node name="Character" type="Sprite2D" parent="Scenes/Scene3" unique_id=871606813]
-position = Vector2(-23.999998, -63.000004)
+position = Vector2(-7.999998, -66)
 scale = Vector2(1.7361112, 1.7361112)
 texture = ExtResource("7_begw3")
 offset = Vector2(10, 0)
