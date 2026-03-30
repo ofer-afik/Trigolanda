@@ -51,7 +51,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xhv7h"]
-size = Vector2(211, 188)
+size = Vector2(211, 194)
 
 [node name="DemoLevel2D" type="Node2D" unique_id=1601629831]
 
@@ -1365,7 +1365,6 @@ visible = false
 position = Vector2(1716, -1035)
 
 [node name="Trophy" type="Sprite2D" parent="." unique_id=1018833414]
-visible = false
 position = Vector2(-3054, -959)
 texture = ExtResource("4_v6dru")
 script = ExtResource("5_l4epn")
@@ -1373,7 +1372,7 @@ script = ExtResource("5_l4epn")
 [node name="Area2D" type="Area2D" parent="Trophy" unique_id=286174610]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trophy/Area2D" unique_id=417629620]
-position = Vector2(5, -32)
+position = Vector2(5, -29)
 shape = SubResource("RectangleShape2D_xhv7h")
 
 [node name="Label" type="Label" parent="Trophy" unique_id=1624279059]
