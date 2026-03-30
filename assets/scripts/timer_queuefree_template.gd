@@ -1,4 +1,5 @@
-extends Timer
+extends Node2D
 
-func _on_timeout() -> void:
-	queue_free()
+func _input(event):
+	if event.is_action_pressed("jump"):
+		queue_free()

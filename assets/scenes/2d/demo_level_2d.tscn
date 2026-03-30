@@ -80,22 +80,18 @@ limit_right = 3500
 limit_bottom = 1500
 position_smoothing_enabled = true
 
-[node name="TextBoxes" type="Timer" parent="." unique_id=1933367613]
-wait_time = 45.0
-autostart = true
+[node name="TextBoxes" type="Node2D" parent="." unique_id=87513267]
 script = ExtResource("6_vro2o")
 
 [node name="TextBox" parent="TextBoxes" unique_id=630697749 instance=ExtResource("6_pa72e")]
-visible = false
 z_index = 1
 offset_left = -3157.0
 offset_top = -1077.0
 offset_right = -1950.0
 offset_bottom = -896.0
-text = "[emph]Wait![/emph] Before you start, a bit of info. In 45 seconds the textboxes will disappear and you will see what is above you..."
+text = "[emph]Wait![/emph] Before you start, a bit of info. When you finish reading, press jump so textboxes will disappear and you will see what is above you..."
 
 [node name="TextBox2" parent="TextBoxes" unique_id=826287025 instance=ExtResource("6_pa72e")]
-visible = false
 z_index = 1
 offset_left = -2817.0
 offset_top = -859.0
@@ -104,7 +100,6 @@ offset_bottom = -678.0
 text = "The green [emph]SoulCry[/emph] crystal stores a bit of your soul, so you can regenerate."
 
 [node name="TextBox3" parent="TextBoxes" unique_id=261945285 instance=ExtResource("6_pa72e")]
-visible = false
 z_index = 1
 offset_left = -3178.0
 offset_top = -663.0
@@ -113,7 +108,6 @@ offset_bottom = -438.0
 text = "You might also see purple crystals here - they're the [emph]GravFlip[/emph] crystals. Whoever named the crystals (native plants in this multiverse) really wasn't very creative"
 
 [node name="TextBox5" parent="TextBoxes" unique_id=43315857 instance=ExtResource("6_pa72e")]
-visible = false
 z_index = 1
 offset_left = -3197.0
 offset_top = -364.0
@@ -122,7 +116,6 @@ offset_bottom = -194.0
 text = "These bushes are what crystals grow on. Be careful, the bushes are [emph]poisonous[/emph]!"
 
 [node name="TextBox4" parent="TextBoxes" unique_id=845550480 instance=ExtResource("6_pa72e")]
-visible = false
 z_index = 1
 offset_left = -2395.0
 offset_top = -378.0
@@ -131,7 +124,6 @@ offset_bottom = -189.0
 text = "This is just a demo section - instead of the full world you must explore to find a home, just get to the trophy"
 
 [node name="Label" type="Label" parent="TextBoxes" unique_id=632341981]
-visible = false
 z_index = 1
 offset_left = -2059.0
 offset_top = -742.0
@@ -1390,5 +1382,4 @@ Good Job! You didn't do a rage quit!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[connection signal="timeout" from="TextBoxes" to="TextBoxes" method="_on_timeout"]
 [connection signal="body_entered" from="Trophy/Area2D" to="Trophy" method="_trophy_body_entered"]
